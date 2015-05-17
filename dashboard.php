@@ -16,23 +16,23 @@
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script> 
-    jQuery(document).ready(function(){
-      jQuery("#editbutton").load("edit.php");
+    $(function(){
+      $("#editbutton").load("edit.php");
       });
     </script> 
        <script> 
-    jQuery(document).ready(function(){
-      jQuery("#infosaving").load("infosaving.php");
+    $(function(){
+      $("#saving").load("infosaving.php");
       });
     </script> 
        <script> 
-    jQuery(document).ready(function(){
-      jQuery("#infoinvest").load("infoinvest.php");
+    $(function(){
+      $("#invest").load("infoinvest.php");
       });
     </script> 
      <script> 
-    jQuery(document).ready(function(){  
-      jQuery("#infoentertain").load("infoentertain.php");
+    $(function(){    
+      $("#entertain").load("infoentertain.php");
       });
     </script>    
 </head>
@@ -109,9 +109,9 @@
                                      </ul>
 
                                      <!-- infosaving-->
-                                    <div class="row">
-                                        <div id="infosaving"></div>
-                                    </div>
+                                    
+                                        <div id="saving"></div>
+                                  
 
                                 </div>  
                             </div>
@@ -133,10 +133,9 @@
                                      </ul>
 
                                      <!-- infoinvest-->
-                                    <div class="row">
-                                        <div id="infoinvest"></div>
-                                    </div>
-
+                                    
+                                        <div id="invest"></div>
+                                    
                                 </div>  
                             </div>
                             <div class="col col-md-4">
@@ -157,9 +156,9 @@
                                      </ul>
 
                                     <!-- infoentertain-->
-                                    <div class="row">
-                                        <div id="infoentertain"></div>
-                                    </div>
+                                    
+                                        <div id="entertain"></div>
+                                    
 
 
                                 </div>  
