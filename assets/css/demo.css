@@ -118,6 +118,14 @@
     background-attachment: fixed;
     position: relative;
 }
+.footer2{
+
+    margin-top: 20px;
+    background-color: #00BCD4;
+    background-color: rgba(0, 188, 212, 0.98);
+    background-attachment: fixed;
+    position: relative;
+}
 .footer .heart{
     color: #FF3B30;
 }
@@ -125,7 +133,18 @@
     background-color: rgba(27, 27, 27, 0.7);
     position: relative;
 }
+.footer2 .overlayer{
+    background-color: rgba(27, 27, 27, 0.7);
+    position: relative;
+}
 .footer .credits {
+    border-top: 1px solid #BBBBBB;
+    margin-top: 85px;
+    padding: 20px 0 15px;
+    text-align: center;
+    color: #EEE;
+}
+.footer2 .credits {
    border-top: 1px solid #BBBBBB;
     margin-top: 85px;
     padding: 20px 0 15px;

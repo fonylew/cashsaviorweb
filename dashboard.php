@@ -42,7 +42,7 @@
         <div class="container-fluid">
             <div class="row" id="navbar">
                 <div class="col col-xs-12">
-                <nav class="navbar navbar-ct-blue navbar-fixed-top">
+                <nav class="navbar navbar-ct-cyan navbar-fixed-top">
                     <a class="navbar-brand" href="#">Brand</a>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
@@ -63,7 +63,7 @@
             </div>
             <div class="row" id="leftnav">
                 <div class="col col-md-2">
-                    <nav class="navbar navbar-ct-blue" style="padding-top:69px;">
+                    <nav class="navbar navbar-ct-cyan" style="padding-top:69px;">
                         <ul class="nav navbar-stacked">
                             <li><a href="#">test1</a></li>
                             <li><a href="#">test2</a></li>
@@ -76,7 +76,7 @@
                     <div class="container-fluid" style="padding-top:100px; padding-right:20px;">
                         <div class="row">
                             <div class="col col-md-12">
-                                <nav class="navbar navbar-ct-blue">
+                                <nav class="navbar navbar-ct-cyan">
                                     <div class="collapse navbar-collapse">
                                         <ul class="nav navbar-nav">
                                             <li><a href="#">used/Left</a></li>
@@ -84,7 +84,9 @@
 
                                         <!-- edit money bar-->
                                         <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
-                                            <div id="editbutton"></div>
+                                            <div id="editbutton">
+                                                <button href="#" class="btn btn-round btn-default">Edit</button>
+                                            </div>
                                             
                                         </ul>
 
@@ -94,10 +96,10 @@
                             <div class="col col-md-4">
                                 <div class="container">
                                     <div class="row">
-                                        <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
+                                        <img class="img-rounded" src='pic/saving.png' style="margin-right: 1%; width:200px; height:relative;"></img>
                                     </div>
-                                     <h4><small class="subtitle">Saving</small></h4>
-                                     <ul>
+                                     <h4>Saving</h4>
+                                     <pre class="prettyprint prettyprinted" style="width: 33%;"><ul>
                                         <li><a>list1</a></li>
                                         <li><a>list2</a></li>
                                         <li><a>list3</a></li>
@@ -106,8 +108,10 @@
                                         <li><a>list6</a></li>
                                         <li><a>list7</a></li>
                                         <li><a>list8</a></li>
-                                     </ul>
-
+                                     </ul></pre>
+                                     <div class="row">
+                                        <button class="btn btn-info">More</button>
+                                    </div>
                                      <!-- infosaving-->
                                     
                                         <div id="saving"></div>
@@ -120,8 +124,8 @@
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
                                     </div>
-                                     <h4><small class="subtitle">Investment</small></h4>
-                                     <ul>
+                                     <h4>Investment</h4>
+                                     <pre class="prettyprint prettyprinted" style="width: 33%;"><ul>
                                         <li><a>list1</a></li>
                                         <li><a>list2</a></li>
                                         <li><a>list3</a></li>
@@ -130,7 +134,10 @@
                                         <li><a>list6</a></li>
                                         <li><a>list7</a></li>
                                         <li><a>list8</a></li>
-                                     </ul>
+                                     </ul></pre>
+                                    <div class="row">
+                                        <button class="btn btn-info">More</button>
+                                    </div>
 
                                      <!-- infoinvest-->
                                     
@@ -143,8 +150,8 @@
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
                                     </div>
-                                    <h4><small class="subtitle">Entertainment</small></h4>
-                                    <ul>
+                                    <h4>Entertainment</h4>
+                                    <pre class="prettyprint prettyprinted" style="width: 33%;"><ul>
                                         <li><a>list1</a></li>
                                         <li><a>list2</a></li>
                                         <li><a>list3</a></li>
@@ -153,7 +160,10 @@
                                         <li><a>list6</a></li>
                                         <li><a>list7</a></li>
                                         <li><a>list8</a></li>
-                                     </ul>
+                                     </ul></pre>
+                                     <div class="row">
+                                        <button class="btn btn-info">More</button>
+                                    </div>
 
                                     <!-- infoentertain-->
                                     
@@ -169,7 +179,17 @@
             </div>
         </div>
     </div>
-
+    <div class="footer2">
+        <div class="overlayer">
+            <div class="container">
+                <div class="row">
+                    <div class="credits">
+                        Outcube.me
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
     <script src="jquery/jquery-1.10.2.js" type="text/javascript"></script>
