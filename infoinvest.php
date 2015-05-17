@@ -31,22 +31,15 @@
     </style>
 </head>
 <body><center>
-<a class="edit_open btn btn-round btn-default" href="#edit">Edit</a>
+<a class="infoin_open btn btn-round btn-default" href="#infoin">info</a>
 
-<!-- edit -->
-<div id="edit" class="well" style="max-width:44em;">
+<!-- infoin -->
+<div id="infoin" class="well" style="max-width:44em;">
 
     <center>
-	<h4>edit example</h4>
-    <p>Add your payment !</p>
-	 <img src="mm.jpg"  style="width:200px;">
-	<br>
-	<br>
-	TEXT <input type="text" id="qwerqwer" size="20">
-	
-	<br><br>
+	<h4>invest example</h4>
     
-    <button onclick="myFunction()" class="edit_close btn btn-default">Done !!</button>
+    <button onclick="myFunction()" class="infoin_close btn btn-default">Done !!</button>
 	</center>
 </div>
 
@@ -54,7 +47,7 @@
 
 <script>
 	$(document).ready(function () {
-	$('#edit').popup();
+	$('#infoin').popup();
 	});
 	</script>
 <script>

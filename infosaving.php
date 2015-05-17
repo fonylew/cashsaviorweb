@@ -31,38 +31,31 @@
     </style>
 </head>
 <body><center>
-<a class="edit_open btn btn-round btn-default" href="#edit">Edit</a>
+<a class="infosav_open btn btn-round btn-default" href="#infosav">info</a>
 
-<!-- edit -->
-<div id="edit" class="well" style="max-width:44em;">
+<!-- infosav -->
+<div id="infosav" class="well" style="max-width:44em;">
 
     <center>
-	<h4>edit example</h4>
-    <p>Add your payment !</p>
-	 <img src="mm.jpg"  style="width:200px;">
-	<br>
-	<br>
-	TEXT <input type="text" id="qwerqwer" size="20">
-	
-	<br><br>
+    <h4>saving example</h4>
     
-    <button onclick="myFunction()" class="edit_close btn btn-default">Done !!</button>
-	</center>
+    <button onclick="myFunction()" class="infosav_close btn btn-default">Done !!</button>
+    </center>
 </div>
 
 <p id="dothis"></p>
 
 <script>
-	$(document).ready(function () {
-	$('#edit').popup();
-	});
-	</script>
+    $(document).ready(function () {
+    $('#infosav').popup();
+    });
+    </script>
 <script>
-	function myFunction(){
-		var x = document.getElementById("qwerqwer").value;
-		alert(x);
-		document.getElementById("dothis").innerHTML = x;
-	}
+    function myFunction(){
+        var x = document.getElementById("qwerqwer").value;
+        alert(x);
+        document.getElementById("dothis").innerHTML = x;
+    }
 </script>
 </center>
 </body>

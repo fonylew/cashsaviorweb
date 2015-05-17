@@ -16,10 +16,25 @@
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script> 
-    $(function(){
-      $("#editbutton").load("edit.php"); 
-    });
+    jQuery(document).ready(function(){
+      jQuery("#editbutton").load("edit.php");
+      });
     </script> 
+       <script> 
+    jQuery(document).ready(function(){
+      jQuery("#infosaving").load("infosaving.php");
+      });
+    </script> 
+       <script> 
+    jQuery(document).ready(function(){
+      jQuery("#infoinvest").load("infoinvest.php");
+      });
+    </script> 
+     <script> 
+    jQuery(document).ready(function(){  
+      jQuery("#infoentertain").load("infoentertain.php");
+      });
+    </script>    
 </head>
 
 <body> 
@@ -67,7 +82,7 @@
                                             <li><a href="#">used/Left</a></li>
                                         </ul>
 
-                                        <!-- add money bar-->
+                                        <!-- edit money bar-->
                                         <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
                                             <div id="editbutton"></div>
                                             
@@ -92,9 +107,12 @@
                                         <li><a>list7</a></li>
                                         <li><a>list8</a></li>
                                      </ul>
+
+                                     <!-- infosaving-->
                                     <div class="row">
-                                        <button class="btn btn-info">Info</button>
+                                        <div id="infosaving"></div>
                                     </div>
+
                                 </div>  
                             </div>
                             <div class="col col-md-4">
@@ -113,9 +131,12 @@
                                         <li><a>list7</a></li>
                                         <li><a>list8</a></li>
                                      </ul>
+
+                                     <!-- infoinvest-->
                                     <div class="row">
-                                        <button class="btn btn-info">Info</button>
+                                        <div id="infoinvest"></div>
                                     </div>
+
                                 </div>  
                             </div>
                             <div class="col col-md-4">
@@ -134,9 +155,13 @@
                                         <li><a>list7</a></li>
                                         <li><a>list8</a></li>
                                      </ul>
+
+                                    <!-- infoentertain-->
                                     <div class="row">
-                                        <button class="btn btn-info">Info</button>
+                                        <div id="infoentertain"></div>
                                     </div>
+
+
                                 </div>  
                             </div>
                         </div>
