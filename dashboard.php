@@ -1,54 +1,161 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html" />
-	<meta charset="utf-8"/>
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=no" name="viewport"/>
-	<link rel="stylesheet" href="css/bootstrap.css"/>
-	<link rel="stylesheet" href="css/drawer.css.map"/>
-	<link rel="stylesheet" href="css/drawer.min.css"/>
-	<link href="css/favicon.ico" rel="icon"/>
-	<link href="css/apple-touch-icon.png" rel="apple-touch-icon"/>
-	<script src="js/jquery-1.11.2.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/iScroll/5.1.1/iscroll-min.js"></script>
-    <script src="//cdn.rawgit.com/ungki/bootstrap.dropdown/3.3.1/dropdown.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.drawer.js"></script>
-    <script src="js/jquery.drawer.min.js"></script>
-    <title>Cash Savior</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>CashSavior Dashboard</title>
+    
+    <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
+  <link href="assets/css/get-shit-done.css" rel="stylesheet" />  
+    <link href="assets/css/demo.css" rel="stylesheet" /> 
+    
+    <!--     Font Awesome     -->
+    <link href="bootstrap3/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+    
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script> 
+    $(function(){
+      $("#editbutton").load("edit.html"); 
+    });
+    </script> 
 </head>
-<body class="drawer drawer-left drawer-responsive drawer-navbar drawer-fixed">
 
-  <header role="banner">
-  <div class="drawer-header">
-    <button type="button" class="drawer-toggle drawer-hamburger">
-      <span class="sr-only">toggle navigation</span>
-      <span class="drawer-hamburger-icon"></span>
-    </button>
-  </div>
+<body> 
+    <div class="main">
+        <div class="container-fluid">
+            <div class="row" id="navbar">
+                <div class="col col-xs-12">
+                <nav class="navbar navbar-ct-blue navbar-fixed-top">
+                    <a class="navbar-brand" href="#">Brand</a>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">test1</a></li>
+                            <li><a href="#">test2</a></li>
+                            <li><a href="#">test3</a></li>
+                            <li><a href="#">test4</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
+                            <li><a href="#">Username</a></li>
+                            <li class="divider"></li>
+                            <li><button href="#" class="btn btn-round btn-default">LogOut</button></li>
+                        </ul>
+                    </div>
+                </nav>
+                </div>
 
-  <div class="drawer-main drawer-default">
-    <nav class="drawer-nav" role="navigation">
-      <div class="drawer-brand"><a href="./">CashSavior</a></div>
+            </div>
+            <div class="row" id="leftnav">
+                <div class="col col-md-2">
+                    <nav class="navbar navbar-ct-blue" style="padding-top:69px;">
+                        <ul class="nav navbar-stacked">
+                            <li><a href="#">test1</a></li>
+                            <li><a href="#">test2</a></li>
+                            <li><a href="#">test3</a></li>
+                            <li><a href="#">test4</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col col-md-10">
+                    <div class="container-fluid" style="padding-top:100px; padding-right:20px;">
+                        <div class="row">
+                            <div class="col col-md-12">
+                                <nav class="navbar navbar-ct-blue">
+                                    <div class="collapse navbar-collapse">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="#">used/Left</a></li>
+                                        </ul>
 
-      <ul class="drawer-menu">
-        <li class="drawer-menu-item"><a href="index.php">info</a></li>
-      </ul>
+                                        <!-- add money bar-->
+                                        <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
+                                            <div id="editbutton"></div>
+                                            
+                                        </ul>
 
-      <div class="drawer-footer"><span></span></div>
-    </nav>
-  </div>
-  </header>
-
-  <div class="drawer-overlay">
-    <h3>DASHBOARD</h3>
-    <p>This will be Dashboard in near future.</p>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
-  </div>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="container">
+                                    <div class="row">
+                                        <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
+                                    </div>
+                                     <h4><small class="subtitle">Saving</small></h4>
+                                     <ul>
+                                        <li><a>list1</a></li>
+                                        <li><a>list2</a></li>
+                                        <li><a>list3</a></li>
+                                        <li><a>list4</a></li>
+                                        <li><a>list5</a></li>
+                                        <li><a>list6</a></li>
+                                        <li><a>list7</a></li>
+                                        <li><a>list8</a></li>
+                                     </ul>
+                                    <div class="row">
+                                        <button class="btn btn-info">Info</button>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="container">
+                                    <div class="row">
+                                        <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
+                                    </div>
+                                     <h4><small class="subtitle">Investment</small></h4>
+                                     <ul>
+                                        <li><a>list1</a></li>
+                                        <li><a>list2</a></li>
+                                        <li><a>list3</a></li>
+                                        <li><a>list4</a></li>
+                                        <li><a>list5</a></li>
+                                        <li><a>list6</a></li>
+                                        <li><a>list7</a></li>
+                                        <li><a>list8</a></li>
+                                     </ul>
+                                    <div class="row">
+                                        <button class="btn btn-info">Info</button>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="container">
+                                    <div class="row">
+                                        <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
+                                    </div>
+                                    <h4><small class="subtitle">Entertainment</small></h4>
+                                    <ul>
+                                        <li><a>list1</a></li>
+                                        <li><a>list2</a></li>
+                                        <li><a>list3</a></li>
+                                        <li><a>list4</a></li>
+                                        <li><a>list5</a></li>
+                                        <li><a>list6</a></li>
+                                        <li><a>list7</a></li>
+                                        <li><a>list8</a></li>
+                                     </ul>
+                                    <div class="row">
+                                        <button class="btn btn-info">Info</button>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
+
+    <script src="jquery/jquery-1.10.2.js" type="text/javascript"></script>
+  <script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+
+  <script src="bootstrap3/js/bootstrap.js" type="text/javascript"></script>
+  <script src="assets/js/gsdk-checkbox.js"></script>
+  <script src="assets/js/gsdk-radio.js"></script>
+  <script src="assets/js/gsdk-bootstrapswitch.js"></script>
+  <script src="assets/js/get-shit-done.js"></script>
+  
+    <script src="assets/js/custom.js"></script>
 </html>
