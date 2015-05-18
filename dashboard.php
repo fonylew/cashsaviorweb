@@ -15,26 +15,13 @@
     
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script> 
-    $(function(){
-      $("#editbutton").load("edit.php");
-      });
-    </script> 
-       <script> 
-    $(function(){
-      $("#saving").load("infosaving.php");
-      });
-    </script> 
-       <script> 
-    $(function(){
-      $("#invest").load("infoinvest.php");
-      });
-    </script> 
-     <script> 
-    $(function(){    
-      $("#entertain").load("infoentertain.php");
-      });
-    </script>    
+     <script>
+      function load() {
+        alert("load event detected!");
+      }
+      window.onload = load;
+    </script>
+
 </head>
 
 <body> 
@@ -96,7 +83,7 @@
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
                                     </div>
-                                     <h4><small class="subtitle">Saving</small></h4>
+                                     <h4><class="subtitle">Saving</h4>
                                      <ul>
                                         <li><a>list1</a></li>
                                         <li><a>list2</a></li>
@@ -106,12 +93,12 @@
                                         <li><a>list6</a></li>
                                         <li><a>list7</a></li>
                                         <li><a>list8</a></li>
+                                        <br>
+                                        <br>
+                                        <!-- infosaving-->
+                                        <div id="saving"></div>
                                      </ul>
 
-                                     <!-- infosaving-->
-                                    
-                                        <div id="saving"></div>
-                                  
 
                                 </div>  
                             </div>
@@ -130,11 +117,12 @@
                                         <li><a>list6</a></li>
                                         <li><a>list7</a></li>
                                         <li><a>list8</a></li>
-                                     </ul>
-
-                                     <!-- infoinvest-->
+                                         <!-- infoinvest-->
                                     
                                         <div id="invest"></div>
+                                    
+                                     </ul>
+
                                     
                                 </div>  
                             </div>
@@ -153,12 +141,13 @@
                                         <li><a>list6</a></li>
                                         <li><a>list7</a></li>
                                         <li><a>list8</a></li>
-                                     </ul>
-
-                                    <!-- infoentertain-->
+                                         <!-- infoentertain-->
                                     
                                         <div id="entertain"></div>
                                     
+                                     </ul>
+
+                                   
 
 
                                 </div>  
@@ -180,6 +169,26 @@
   <script src="assets/js/gsdk-radio.js"></script>
   <script src="assets/js/gsdk-bootstrapswitch.js"></script>
   <script src="assets/js/get-shit-done.js"></script>
-  
+    <script> 
+    $(function(){
+      $("#editbutton").load("edit.php");
+      });
+    </script> 
+       <script> 
+    $(function(){
+      $("#saving").load("infosaving.php");
+      });
+    </script> 
+       <script> 
+    $(function(){
+      $("#invest").load("infoinvest.php");
+      });
+    </script> 
+     <script> 
+    $(function(){    
+      $("#entertain").load("infoentertain.php");
+      });
+    </script>  
+
     <script src="assets/js/custom.js"></script>
 </html>

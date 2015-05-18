@@ -31,7 +31,7 @@
     </style>
 </head>
 <body><center>
-<a class="edit_open btn btn-round btn-default" href="#edit">Edit</a>
+<button class="edit_open btn btn-round btn-default" href="#edit">Edit</button>
 
 <!-- edit -->
 <div id="edit" class="well" style="max-width:44em;">
