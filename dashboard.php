@@ -29,7 +29,7 @@
         <div class="container-fluid">
             <div class="row" id="navbar">
                 <div class="col col-xs-12">
-                <nav class="navbar navbar-ct-blue navbar-fixed-top">
+                <nav class="navbar navbar-ct-cyan navbar-fixed-top">
                     <a class="navbar-brand" href="#">Brand</a>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
@@ -48,22 +48,25 @@
                 </div>
 
             </div>
+            <div class="sidebar" style = "position:absolute;
+                                        top:0; bottom:0; left:0;
+                                        width:15%;
+                                        background-color: #80DEEA;
+    background-color: rgba(128, 222, 234, 0.98); padding-top: 69px;">
+                <ul class="nav navbar-stacked">
+                    <li><a href="#">test1</a></li>
+                    <li><a href="#">test2</a></li>
+                    <li><a href="#">test3</a></li>
+                    <li><a href="#">test4</a></li>
+                </ul>
+            </div>
             <div class="row" id="leftnav">
-                <div class="col col-md-2">
-                    <nav class="navbar navbar-ct-blue" style="padding-top:69px;">
-                        <ul class="nav navbar-stacked">
-                            <li><a href="#">test1</a></li>
-                            <li><a href="#">test2</a></li>
-                            <li><a href="#">test3</a></li>
-                            <li><a href="#">test4</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col col-md-10">
-                    <div class="container-fluid" style="padding-top:100px; padding-right:20px;">
-                        <div class="row">
+                
+                <div class="col col-lg-10 col-lg-offset-2 col-md-9 col-md-offset-3 col-sm-9 col-sm-offset-3 col-xs-9 col-xs-offset-3">
+                    <div class="container-fluid" style="padding-top:100px; padding-right:20px; left:200;">
+                        <div class="row centered-form center-block">
                             <div class="col col-md-12">
-                                <nav class="navbar navbar-ct-blue">
+                                <nav class="navbar navbar-ct-red">
                                     <div class="collapse navbar-collapse">
                                         <ul class="nav navbar-nav">
                                             <li><a href="#">used/Left</a></li>
@@ -71,7 +74,9 @@
 
                                         <!-- edit money bar-->
                                         <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
-                                            <div id="editbutton"></div>
+                                            <div id="editbutton">
+                                                <button href="#" class="btn btn-round btn-default">Edit</button>
+                                            </div>
                                             
                                         </ul>
 
@@ -83,22 +88,26 @@
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
                                     </div>
-                                     <h4><class="subtitle">Saving</h4>
-                                     <ul>
-                                        <li><a>list1</a></li>
-                                        <li><a>list2</a></li>
-                                        <li><a>list3</a></li>
-                                        <li><a>list4</a></li>
-                                        <li><a>list5</a></li>
-                                        <li><a>list6</a></li>
-                                        <li><a>list7</a></li>
-                                        <li><a>list8</a></li>
-                                        <br>
-                                        <br>
+                                    <h4>Saving</h4>
+                                    <pre class="prettyprint prettyprinted" style="width: 33%;">
+                                        <ul>
+                                        
+                                            <li><a>list1</a></li>
+                                            <li><a>list2</a></li>
+                                            <li><a>list3</a></li>
+                                            <li><a>list4</a></li>
+                                            <li><a>list5</a></li>
+                                            <li><a>list6</a></li>
+                                            <li><a>list7</a></li>
+                                            <li><a>list8</a></li>
+                                             
+                                        </ul>
+                                    </pre>
                                         <!-- infosaving-->
-                                        <div id="saving"></div>
-                                     </ul>
-
+                                        <div id="saving">
+                                          <button href="#" class="btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;">See More</button>
+                                        </div>
+                                        
 
                                 </div>  
                             </div>
@@ -107,21 +116,28 @@
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
                                     </div>
-                                     <h4><small class="subtitle">Investment</small></h4>
-                                     <ul>
-                                        <li><a>list1</a></li>
-                                        <li><a>list2</a></li>
-                                        <li><a>list3</a></li>
-                                        <li><a>list4</a></li>
-                                        <li><a>list5</a></li>
-                                        <li><a>list6</a></li>
-                                        <li><a>list7</a></li>
-                                        <li><a>list8</a></li>
+                                     <h4>Investment</h4>
+                                    <pre class="prettyprint prettyprinted" style="width: 33%;">
+                                        <ul>
+                                        
+                                            <li><a>list1</a></li>
+                                            <li><a>list2</a></li>
+                                            <li><a>list3</a></li>
+                                            <li><a>list4</a></li>
+                                            <li><a>list5</a></li>
+                                            <li><a>list6</a></li>
+                                            <li><a>list7</a></li>
+                                            <li><a>list8</a></li>
+                                             
+                                        </ul>
+                                    </pre>
                                          <!-- infoinvest-->
                                     
-                                        <div id="invest"></div>
+                                        <div id="invest">
+                                          <button href="#" class="btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;">See More</button>
+                                        </div>
                                     
-                                     </ul>
+                                     
 
                                     
                                 </div>  
@@ -131,19 +147,25 @@
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
                                     </div>
-                                    <h4><small class="subtitle">Entertainment</small></h4>
-                                    <ul>
-                                        <li><a>list1</a></li>
-                                        <li><a>list2</a></li>
-                                        <li><a>list3</a></li>
-                                        <li><a>list4</a></li>
-                                        <li><a>list5</a></li>
-                                        <li><a>list6</a></li>
-                                        <li><a>list7</a></li>
-                                        <li><a>list8</a></li>
-                                         <!-- infoentertain-->
-                                    
-                                        <div id="entertain"></div>
+                                    <h4>Entertainment</h4>
+                                    <pre class="prettyprint prettyprinted" style="width: 33%;">
+                                        <ul>
+                                        
+                                            <li><a>list1</a></li>
+                                            <li><a>list2</a></li>
+                                            <li><a>list3</a></li>
+                                            <li><a>list4</a></li>
+                                            <li><a>list5</a></li>
+                                            <li><a>list6</a></li>
+                                            <li><a>list7</a></li>
+                                            <li><a>list8</a></li>
+                                             
+                                        </ul>
+                                    </pre>
+                                    <!-- infoentertain-->
+                                        <div id="entertain">
+                                          <button href="#" class="btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;">See More</button>
+                                        </div>
                                     
                                      </ul>
 
@@ -153,6 +175,18 @@
                                 </div>  
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer2">
+        <div class="overlayer">
+            <div class="container">
+                <div class="row">
+                    <div class="credits">
+                        Outcube.me
                     </div>
                 </div>
             </div>

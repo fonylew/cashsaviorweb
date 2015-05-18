@@ -140,6 +140,7 @@ input.ct-red + span.switch-left, input.ct-red + span + label + span.switch-right
     padding: 8px 16px;
 }
 .btn-round{
+    z-index: 7;
     border-width: 1px;
     border-radius: 30px !important;
     opacity: 0.79;
@@ -164,6 +165,7 @@ input.ct-red + span.switch-left, input.ct-red + span + label + span.switch-right
     min-width: 140px;
 }
 .btn-default{
+    z-index: 7;
     color: #777777;
     border-color: #999999
 }
@@ -172,6 +174,7 @@ input.ct-red + span.switch-left, input.ct-red + span + label + span.switch-right
     border-color: #3472F7;
 }
 .btn-info{
+    z-index: 7;
      color: #2C93FF;
     border-color: #2C93FF;
 }
@@ -566,6 +569,7 @@ input.ct-red + span.switch-left, input.ct-red + span + label + span.switch-right
     background-color: #B2EBF2;
     background-color: rgba(178, 235, 242, 0.98);
 }
+
 .navbar:not(.navbar-transparent).navbar-ct-azzure{
     background-color: #5BCAFF;
     background-color: rgba(91, 203, 255, 0.98);
