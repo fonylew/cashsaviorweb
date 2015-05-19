@@ -15,6 +15,194 @@
     
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+     <script>
+      function load() {
+        alert("load event detected!");
+      }
+      window.onload = load;
+    </script>
+
+</head>
+
+<body> 
+    <div class="main">
+        <div class="container-fluid">
+            <div class="row" id="navbar">
+                <div class="col col-xs-12">
+                <nav class="navbar navbar-ct-cyan navbar-fixed-top">
+                    <a class="navbar-brand" href="#">Brand</a>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">test1</a></li>
+                            <li><a href="#">test2</a></li>
+                            <li><a href="#">test3</a></li>
+                            <li><a href="#">test4</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
+                            <li><a href="#">Username</a></li>
+                            <li class="divider"></li>
+                            <li><button href="#" class="btn btn-round btn-default">LogOut</button></li>
+                        </ul>
+                    </div>
+                </nav>
+                </div>
+
+            </div>
+            <div class="sidebar" style = "position:absolute;
+                                        top:0; bottom:0; left:0;
+                                        width:15%;
+                                        background-color: #80DEEA;
+    background-color: rgba(128, 222, 234, 0.98); padding-top: 69px;">
+                <ul class="nav navbar-stacked">
+                    <li><a href="#">test1</a></li>
+                    <li><a href="#">test2</a></li>
+                    <li><a href="#">test3</a></li>
+                    <li><a href="#">test4</a></li>
+                </ul>
+            </div>
+            <div class="row" id="leftnav">
+                
+                <div class="col col-lg-10 col-lg-offset-2 col-md-9 col-md-offset-3 col-sm-9 col-sm-offset-3 col-xs-9 col-xs-offset-3">
+                    <div class="container-fluid" style="padding-top:100px; padding-right:20px; left:200;">
+                        <div class="row centered-form center-block">
+                            <div class="col col-md-12">
+                                <nav class="navbar navbar-ct-red">
+                                    <div class="collapse navbar-collapse">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="#">used/Left</a></li>
+                                        </ul>
+
+                                        <!-- edit money bar-->
+                                        <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
+                                            <div id="editbutton">
+                                                <button href="#" class="btn btn-round btn-default">Edit</button>
+                                            </div>
+                                            
+                                        </ul>
+
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="container">
+                                    <div class="row">
+                                        <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
+                                    </div>
+                                    <h4>Saving</h4>
+                                    <pre class="prettyprint prettyprinted" style="width: 33%;">
+                                        <ul>
+                                        
+                                            <li><a>list1</a></li>
+                                            <li><a>list2</a></li>
+                                            <li><a>list3</a></li>
+                                            <li><a>list4</a></li>
+                                            <li><a>list5</a></li>
+                                            <li><a>list6</a></li>
+                                            <li><a>list7</a></li>
+                                            <li><a>list8</a></li>
+                                             
+                                        </ul>
+                                    </pre>
+                                        <!-- infosaving-->
+                                        <div id="saving">
+                                          <button href="#" class="btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;">See More</button>
+                                        </div>
+                                        
+
+                                </div>  
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="container">
+                                    <div class="row">
+                                        <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
+                                    </div>
+                                     <h4>Investment</h4>
+                                    <pre class="prettyprint prettyprinted" style="width: 33%;">
+                                        <ul>
+                                        
+                                            <li><a>list1</a></li>
+                                            <li><a>list2</a></li>
+                                            <li><a>list3</a></li>
+                                            <li><a>list4</a></li>
+                                            <li><a>list5</a></li>
+                                            <li><a>list6</a></li>
+                                            <li><a>list7</a></li>
+                                            <li><a>list8</a></li>
+                                             
+                                        </ul>
+                                    </pre>
+                                         <!-- infoinvest-->
+                                    
+                                        <div id="invest">
+                                          <button href="#" class="btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;">See More</button>
+                                        </div>
+                                    
+                                     
+
+                                    
+                                </div>  
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="container">
+                                    <div class="row">
+                                        <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
+                                    </div>
+                                    <h4>Entertainment</h4>
+                                    <pre class="prettyprint prettyprinted" style="width: 33%;">
+                                        <ul>
+                                        
+                                            <li><a>list1</a></li>
+                                            <li><a>list2</a></li>
+                                            <li><a>list3</a></li>
+                                            <li><a>list4</a></li>
+                                            <li><a>list5</a></li>
+                                            <li><a>list6</a></li>
+                                            <li><a>list7</a></li>
+                                            <li><a>list8</a></li>
+                                             
+                                        </ul>
+                                    </pre>
+                                    <!-- infoentertain-->
+                                        <div id="entertain">
+                                          <button href="#" class="btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;">See More</button>
+                                        </div>
+                                    
+                                     </ul>
+
+                                   
+
+
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer2">
+        <div class="overlayer">
+            <div class="container">
+                <div class="row">
+                    <div class="credits">
+                        Outcube.me
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+    <script src="jquery/jquery-1.10.2.js" type="text/javascript"></script>
+  <script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+
+  <script src="bootstrap3/js/bootstrap.js" type="text/javascript"></script>
+  <script src="assets/js/gsdk-checkbox.js"></script>
+  <script src="assets/js/gsdk-radio.js"></script>
+  <script src="assets/js/gsdk-bootstrapswitch.js"></script>
+  <script src="assets/js/get-shit-done.js"></script>
     <script> 
     $(function(){
       $("#editbutton").load("edit.php");
@@ -34,152 +222,7 @@
     $(function(){    
       $("#entertain").load("infoentertain.php");
       });
-    </script>    
-</head>
+    </script>  
 
-<body> 
-    <div class="main">
-        <div class="container-fluid">
-            <div class="row" id="navbar">
-                <div class="col col-xs-12">
-                <nav class="navbar navbar-ct-blue navbar-fixed-top">
-                    <a class="navbar-brand" href="#">Brand</a>
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#">test1</a></li>
-                            <li><a href="#">test2</a></li>
-                            <li><a href="#">test3</a></li>
-                            <li><a href="#">test4</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
-                            <li><a href="#">Username</a></li>
-                            <li class="divider"></li>
-                            <li><button href="#" class="btn btn-round btn-default">LogOut</button></li>
-                        </ul>
-                    </div>
-                </nav>
-                </div>
-
-            </div>
-            <div class="row" id="leftnav">
-                <div class="col col-md-2">
-                    <nav class="navbar navbar-ct-blue" style="padding-top:69px;">
-                        <ul class="nav navbar-stacked">
-                            <li><a href="#">test1</a></li>
-                            <li><a href="#">test2</a></li>
-                            <li><a href="#">test3</a></li>
-                            <li><a href="#">test4</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col col-md-10">
-                    <div class="container-fluid" style="padding-top:100px; padding-right:20px;">
-                        <div class="row">
-                            <div class="col col-md-12">
-                                <nav class="navbar navbar-ct-blue">
-                                    <div class="collapse navbar-collapse">
-                                        <ul class="nav navbar-nav">
-                                            <li><a href="#">used/Left</a></li>
-                                        </ul>
-
-                                        <!-- edit money bar-->
-                                        <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
-                                            <div id="editbutton"></div>
-                                            
-                                        </ul>
-
-                                    </div>
-                                </nav>
-                            </div>
-                            <div class="col col-md-4">
-                                <div class="container">
-                                    <div class="row">
-                                        <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
-                                    </div>
-                                     <h4><small class="subtitle">Saving</small></h4>
-                                     <ul>
-                                        <li><a>list1</a></li>
-                                        <li><a>list2</a></li>
-                                        <li><a>list3</a></li>
-                                        <li><a>list4</a></li>
-                                        <li><a>list5</a></li>
-                                        <li><a>list6</a></li>
-                                        <li><a>list7</a></li>
-                                        <li><a>list8</a></li>
-                                     </ul>
-
-                                     <!-- infosaving-->
-                                    
-                                        <div id="saving"></div>
-                                  
-
-                                </div>  
-                            </div>
-                            <div class="col col-md-4">
-                                <div class="container">
-                                    <div class="row">
-                                        <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
-                                    </div>
-                                     <h4><small class="subtitle">Investment</small></h4>
-                                     <ul>
-                                        <li><a>list1</a></li>
-                                        <li><a>list2</a></li>
-                                        <li><a>list3</a></li>
-                                        <li><a>list4</a></li>
-                                        <li><a>list5</a></li>
-                                        <li><a>list6</a></li>
-                                        <li><a>list7</a></li>
-                                        <li><a>list8</a></li>
-                                     </ul>
-
-                                     <!-- infoinvest-->
-                                    
-                                        <div id="invest"></div>
-                                    
-                                </div>  
-                            </div>
-                            <div class="col col-md-4">
-                                <div class="container">
-                                    <div class="row">
-                                        <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
-                                    </div>
-                                    <h4><small class="subtitle">Entertainment</small></h4>
-                                    <ul>
-                                        <li><a>list1</a></li>
-                                        <li><a>list2</a></li>
-                                        <li><a>list3</a></li>
-                                        <li><a>list4</a></li>
-                                        <li><a>list5</a></li>
-                                        <li><a>list6</a></li>
-                                        <li><a>list7</a></li>
-                                        <li><a>list8</a></li>
-                                     </ul>
-
-                                    <!-- infoentertain-->
-                                    
-                                        <div id="entertain"></div>
-                                    
-
-
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</body>
-
-    <script src="jquery/jquery-1.10.2.js" type="text/javascript"></script>
-  <script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
-
-  <script src="bootstrap3/js/bootstrap.js" type="text/javascript"></script>
-  <script src="assets/js/gsdk-checkbox.js"></script>
-  <script src="assets/js/gsdk-radio.js"></script>
-  <script src="assets/js/gsdk-bootstrapswitch.js"></script>
-  <script src="assets/js/get-shit-done.js"></script>
-  
     <script src="assets/js/custom.js"></script>
 </html>

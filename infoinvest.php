@@ -34,7 +34,7 @@
 <a class="infoin_open btn btn-round btn-default" href="#infoin">info</a>
 
 <!-- infoin -->
-<div id="infoin" class="well" style="max-width:44em;">
+<div id="infoin" class="well" style="max-width:44em; z-index: 100001;">
 
     <center>
 	<h4>invest example</h4>
