@@ -94,34 +94,7 @@
                               
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
-                                        <a class="add_open btn btn-round btn-default" href="#add">add</a>
-                                            <!-- add -->
-<div id="add" class="well" style="max-width:44em;">
-
-    <center>
-    <h4>saving example</h4>
-    KUYYYYYYYYYYYYYYYYYYYYY
-    <button onclick="myFunction()" class="add_close btn btn-default">Done !!</button>
-    </center>
-</div>
-
-<p id="dothis"></p>
-
-<script>
-    $(document).ready(function () {
-    $('#add').popup();
-    });
-    </script>
-<script>
-    function myFunction(){
-        var x = document.getElementById("qwerqwer").value;
-        alert(x);
-        document.getElementById("dothis").innerHTML = x;
-    }
-</script>
-</center>
-                                       
-                                    </div>
+                                     </div>
                                     <h4>Saving</h4>
                                     <pre class="prettyprint prettyprinted" style="width: 25%;">
 
@@ -259,6 +232,13 @@
       $("#entertain").load("infoentertain.php");
       });
     </script>
+    <script>
+      $(function(){    
+      $("#add").load("infoentertain.php");
+      });
+    </script>
+
+
   
 
     <script src="assets/js/custom.js"></script>
