@@ -36,7 +36,7 @@
     @mysql_select_db("zp8461_cashsavior") or die (mysql_error());
 
     ?>
-    <center>
+
 <a class="infoen_open btn btn-round btn-default" href="#infoen">info</a>
 
 <!-- infoen -->
@@ -79,5 +79,5 @@
         document.getElementById("dothis").innerHTML = x;
     }
 </script>
-</center>
+
 </body>

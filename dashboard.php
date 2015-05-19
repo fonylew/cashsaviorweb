@@ -15,6 +15,8 @@
     
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <!-- jQuery Popup Overlay -->
+    <script src="jquery.popupoverlay.js"></script>
      <script>
       function load() {
         alert("load event detected!");
@@ -92,10 +94,37 @@
                               
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
+                                        <a class="add_open btn btn-round btn-default" href="#add">add</a>
+                                            <!-- add -->
+<div id="add" class="well" style="max-width:44em;">
+
+    <center>
+    <h4>saving example</h4>
+    KUYYYYYYYYYYYYYYYYYYYYY
+    <button onclick="myFunction()" class="add_close btn btn-default">Done !!</button>
+    </center>
+</div>
+
+<p id="dothis"></p>
+
+<script>
+    $(document).ready(function () {
+    $('#add').popup();
+    });
+    </script>
+<script>
+    function myFunction(){
+        var x = document.getElementById("qwerqwer").value;
+        alert(x);
+        document.getElementById("dothis").innerHTML = x;
+    }
+</script>
+</center>
+                                       
                                     </div>
                                     <h4>Saving</h4>
                                     <pre class="prettyprint prettyprinted" style="width: 25%;">
-                                      
+
                                         
                                     </pre>
                                         <!-- infosaving-->
@@ -110,6 +139,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
+                                         
                                     </div>
                                      <h4>Investment</h4>
                                     <pre class="prettyprint prettyprinted" style="width: 25%;">
@@ -130,6 +160,7 @@
                                     
                                         <div id="invest">
                                           <button href="#" class="btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;">See More</button>
+                                        
                                         </div>
                                     
                                      
@@ -141,7 +172,8 @@
                                 <div class="container">
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
-                                    </div>
+                                       
+                                              </div>
                                     <h4>Entertainment</h4>
                                     <pre class="prettyprint prettyprinted" style="width: 25%;">
                                   
@@ -184,6 +216,7 @@
         </div>
     </div>
 
+
     <div class="footer2">
         <div class="overlayer">
             <div class="container">
@@ -225,7 +258,8 @@
     $(function(){    
       $("#entertain").load("infoentertain.php");
       });
-    </script>  
+    </script>
+  
 
     <script src="assets/js/custom.js"></script>
 </html>

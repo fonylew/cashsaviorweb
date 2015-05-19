@@ -31,7 +31,7 @@
     </style>
 
 </head>
-<body>
+<body><center>
 <a class="infoin_open btn btn-round btn-default" href="#infoin">info</a>
 
 <!-- infoin -->
@@ -58,5 +58,5 @@
 		document.getElementById("dothis").innerHTML = x;
 	}
 </script>
-
+</center>
 </body>
