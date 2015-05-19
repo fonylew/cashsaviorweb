@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>TestFill</title>
+    <script type='text/javascript' src="js/bonsai-0.4.1.min.js"></script>
     <style>
         <!-- Can move it to some included CSS file -->
         #canvases{
@@ -12,55 +13,93 @@
         } 
     </style>
 </head>
-<body bgcolor="yellow">
+<body>
     <h2> helloooo </h2>
     <div>
         <div style="display:none;">
-          <img id="entMask" src="img/mask_entertainment.png" width="300" height="300">
-          <img id="savMask" src="img/mask_saving.png" width="300" height="300">
-          <img id="intMask" src="img/mask_invest.png" width="300" height="300">
+          <img id="entMask" src="img/mask_entertainment.png" width="250" height="250">
+          <img id="savMask" src="img/mask_saving.png" width="250" height="250">
+          <img id="invMask" src="img/mask_invest.png" width="250" height="250">
         </div>
-        <canvas id="entCanvas" class="canvases" width="100" height="100">
+        <canvas id="entCanvas" class="canvases" width="250" height="250">
             
         </canvas>
-        <canvas id="savCanvas" class="canvases" width="100" height="100">
+        <canvas id="savCanvas" class="canvases" width="250" height="250">
             <!-- Provide fallback -->
         </canvas>
-        <canvas id="invCanvas" class="canvases" width="100" height="100">
+        <canvas id="invCanvas" class="canvases" width="250" height="250">
             <!-- Provide fallback -->
         </canvas>
     </div>
     <script>
-        window.onload = function() {
-            alert("hey");
+        //percentage value from korn
+        var ent=20;
+        var sav=100;
+        var inv=80;
+        function fillent(percent){
+            var ent=document.getElementById("entCanvas");
+            var ectx=ent.getContext("2d");
             ectx.beginPath();
-            ectx.rect(0, 0, 100, 100);
-            ectx.fillStyle = 'cyan';
+            ectx.rect(0, 250-(percent*2.5), 250, 500);
+            ectx.fillStyle = '#00bcd4';
             ectx.fill();
-            
-//            sctx.beginPath();
-//            sctx.rect(0, 0, 100, 100);
-//            sctx.fillStyle = 'cyan';
-//            sctx.fill();
-            
-            ictx.beginPath();
-            ictx.rect(0, 0, 100, 100);
-            ictx.fillStyle = 'cyan';
-            ictx.fill();
-            
             var emask=document.getElementById("entMask");
-            var smask=document.getElementById("savMask");
-            var imask=document.getElementById("invMask");
             ectx.drawImage(emask,0,0);
+            return;
+        }
+        
+        function fillsav(percent){
+            var sav=document.getElementById("savCanvas");
+            var sctx=sav.getContext("2d");
+            sctx.beginPath();
+            sctx.rect(0, 250-(percent*2.5), 250, 500);
+            sctx.fillStyle = '#00bcd4';
+            sctx.fill();
+            var smask=document.getElementById("savMask");
             sctx.drawImage(smask,0,0);
-            //ictx.drawImage(imask,0,0);
-            
-            maskent = new Image();
-            maskent.src = "img/mask_entertainment.png"; // can also be a remote URL e.g. http://
-            maskent.onload = function() {
-            ectx.drawImage(maskent,0,0);
-};
-        };
+            return;
+        }
+        
+        function fillinv(percent){
+            var inv=document.getElementById("invCanvas");
+            var ictx=inv.getContext("2d");
+            ictx.beginPath();
+            ictx.rect(0, 250-(percent*2.5), 250, 500);
+            ictx.fillStyle = '#00bcd4';
+            ictx.fill();
+            var imask=document.getElementById("invMask");
+            ictx.drawImage(imask,0,0);
+            return;
+        }
+        window.onload = function() {
+            var ent=document.getElementById("entCanvas");
+            var ectx=ent.getContext("2d");
+            var sav=document.getElementById("savCanvas");
+            var sctx=sav.getContext("2d");
+            var inv=document.getElementById("invCanvas");
+            var ictx=inv.getContext("2d");
+            //-------- back -------------------
+            ectx.beginPath();
+            ectx.rect(0, 0, 250, 250);
+            ectx.fillStyle = '#dddddd';
+            ectx.fill();
+        
+            sctx.beginPath();
+            sctx.rect(0, 0, 250, 250);
+            sctx.fillStyle = '#dddddd';
+            sctx.fill();
+
+            ictx.beginPath();
+            ictx.rect(0, 0, 250, 250);
+            ictx.fillStyle = '#dddddd';
+            ictx.fill();
+            //----------------------------------
+            fillent(ent);
+            fillsav(sav);
+            fillinv(inv);
+        }
+        
+        
     </script>
 </body>
 </html>
