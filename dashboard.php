@@ -17,12 +17,6 @@
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <!-- jQuery Popup Overlay -->
     <script src="jquery.popupoverlay.js"></script>
-     <script>
-      function load() {
-        alert("load event detected!");
-      }
-      window.onload = load;
-    </script>
 
 </head>
 
@@ -145,7 +139,8 @@
                                 <div class="container">
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
-                                       
+                                        <br>
+                                        <div id="add">
                                               </div>
                                     <h4>Entertainment</h4>
                                     <pre class="prettyprint prettyprinted" style="width: 25%;">
