@@ -1,9 +1,66 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>TestFill</title>
+    <style>
+        <!-- Can move it to some included CSS file -->
+        #canvases{
+            display:block;
+            width:80%;
+            padding:50px 10%;
+            height:800px;
+        } 
+    </style>
 </head>
-<body>
-
+<body bgcolor="yellow">
+    <h2> helloooo </h2>
+    <div>
+        <div style="display:none;">
+          <img id="entMask" src="img/mask_entertainment.png" width="300" height="300">
+          <img id="savMask" src="img/mask_saving.png" width="300" height="300">
+          <img id="intMask" src="img/mask_invest.png" width="300" height="300">
+        </div>
+        <canvas id="entCanvas" class="canvases" width="100" height="100">
+            
+        </canvas>
+        <canvas id="savCanvas" class="canvases" width="100" height="100">
+            <!-- Provide fallback -->
+        </canvas>
+        <canvas id="invCanvas" class="canvases" width="100" height="100">
+            <!-- Provide fallback -->
+        </canvas>
+    </div>
+    <script>
+        window.onload = function() {
+            alert("hey");
+            ectx.beginPath();
+            ectx.rect(0, 0, 100, 100);
+            ectx.fillStyle = 'cyan';
+            ectx.fill();
+            
+//            sctx.beginPath();
+//            sctx.rect(0, 0, 100, 100);
+//            sctx.fillStyle = 'cyan';
+//            sctx.fill();
+            
+            ictx.beginPath();
+            ictx.rect(0, 0, 100, 100);
+            ictx.fillStyle = 'cyan';
+            ictx.fill();
+            
+            var emask=document.getElementById("entMask");
+            var smask=document.getElementById("savMask");
+            var imask=document.getElementById("invMask");
+            ectx.drawImage(emask,0,0);
+            sctx.drawImage(smask,0,0);
+            //ictx.drawImage(imask,0,0);
+            
+            maskent = new Image();
+            maskent.src = "img/mask_entertainment.png"; // can also be a remote URL e.g. http://
+            maskent.onload = function() {
+            ectx.drawImage(maskent,0,0);
+};
+        };
+    </script>
 </body>
 </html>
