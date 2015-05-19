@@ -33,7 +33,7 @@
     @mysql_select_db("zp8461_cashsavior") or die (mysql_error());
 
     ?>
-<a class="infosav_open btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;" href="#infosav">info</a>
+<a class="infosav_open btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;" href="#infosav">See more</a>
 
 <!-- infosav -->
 <div id="infosav" class="well" style="max-width:44em;">

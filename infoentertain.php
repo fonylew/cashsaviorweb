@@ -35,7 +35,7 @@
 
     ?>
 
-<a class="infoen_open btn btn-round btn-default" href="#infoen">info</a>
+<a class="infoen_open btn btn-round btn-default" href="#infoen">See more</a>
 
 <!-- infoen -->
 <div id="infoen" class="well" style="max-width:44em;">
