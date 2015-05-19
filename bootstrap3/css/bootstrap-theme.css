@@ -57,6 +57,14 @@
   background-position: 0 -15px;
 }
 
+.btn-round{
+    z-index: 7;
+    border-width: 1px;
+    border-radius: 30px !important;
+    opacity: 0.79;
+    padding: 9px 18px;
+}
+
 .btn-default:active,
 .btn-default.active {
   background-color: #e0e0e0;
@@ -231,7 +239,13 @@
           box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
 }
 
-.navbar-brand,
+.navbar-brand{
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
 .navbar-nav > li > a {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
 }
