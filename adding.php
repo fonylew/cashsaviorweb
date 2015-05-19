@@ -8,6 +8,8 @@
     <meta name="description" content="jQuery plugin for responsive and accessible modal windows and tooltips." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css" />
 
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
@@ -29,7 +31,7 @@
     </style>
 
 </head>
-<body>
+<body><center>
 <a class="infoin_open btn btn-round btn-default" href="#infoin">info</a>
 
 <!-- infoin -->
@@ -56,5 +58,5 @@
 		document.getElementById("dothis").innerHTML = x;
 	}
 </script>
-
+</center>
 </body>

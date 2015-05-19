@@ -15,6 +15,8 @@
     
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <!-- jQuery Popup Overlay -->
+    <script src="jquery.popupoverlay.js"></script>
      <script>
       function load() {
         alert("load event detected!");
@@ -25,11 +27,15 @@
 </head>
 
 <body> 
+  <?php
+    @mysql_connect("localhost","zp8461_user","User1234") or die(mysql_error ());
+    @mysql_select_db("zp8461_cashsavior") or die (mysql_error());
+  ?>
     <div class="main">
         <div class="container-fluid">
             <div class="row" id="navbar">
                 <div class="col col-xs-12">
-                <nav class="navbar navbar-ct-cyan navbar-fixed-top">
+                <nav class="navbar navbar-ct-blue navbar-fixed-top">
                     <a class="navbar-brand" href="#">Brand</a>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
@@ -85,28 +91,19 @@
                             </div>
                             <div class="col col-md-4">
                                 <div class="container">
+                              
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
-                                    </div>
+                                     </div>
                                     <h4>Saving</h4>
-                                    <pre class="prettyprint prettyprinted" style="width: 33%;">
-                                        <ul>
+                                    <pre class="prettyprint prettyprinted" style="width: 25%;">
+
                                         
-                                            <li><a>list1</a></li>
-                                            <li><a>list2</a></li>
-                                            <li><a>list3</a></li>
-                                            <li><a>list4</a></li>
-                                            <li><a>list5</a></li>
-                                            <li><a>list6</a></li>
-                                            <li><a>list7</a></li>
-                                            <li><a>list8</a></li>
-                                             
-                                        </ul>
                                     </pre>
                                         <!-- infosaving-->
-                                        <div id="saving">
-                                          <button href="#" class="btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;">See More</button>
-                                        </div>
+                                      <div id="saving">
+                                        <button href="#" class="btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;">See More</button>
+                                      </div>
                                         
 
                                 </div>  
@@ -115,9 +112,10 @@
                                 <div class="container">
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
+                                         
                                     </div>
                                      <h4>Investment</h4>
-                                    <pre class="prettyprint prettyprinted" style="width: 33%;">
+                                    <pre class="prettyprint prettyprinted" style="width: 25%;">
                                         <ul>
                                         
                                             <li><a>list1</a></li>
@@ -135,6 +133,7 @@
                                     
                                         <div id="invest">
                                           <button href="#" class="btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;">See More</button>
+                                        
                                         </div>
                                     
                                      
@@ -146,21 +145,30 @@
                                 <div class="container">
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
-                                    </div>
+                                       
+                                              </div>
                                     <h4>Entertainment</h4>
-                                    <pre class="prettyprint prettyprinted" style="width: 33%;">
-                                        <ul>
-                                        
-                                            <li><a>list1</a></li>
-                                            <li><a>list2</a></li>
-                                            <li><a>list3</a></li>
-                                            <li><a>list4</a></li>
-                                            <li><a>list5</a></li>
-                                            <li><a>list6</a></li>
-                                            <li><a>list7</a></li>
-                                            <li><a>list8</a></li>
-                                             
-                                        </ul>
+                                    <pre class="prettyprint prettyprinted" style="width: 25%;">
+                                  
+                              <?php    
+                              $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
+                              FROM u111111
+                              JOIN type ON u111111.typeid = type.typeid
+                              AND u111111.subid = type.subid
+                              WHERE u111111.typeid =1
+                              ORDER BY u111111.date DESC LIMIT 2
+
+                              ") or die("Invalid query: "  .mysql_error());
+                              while($data=mysql_fetch_array($query)) {
+                              echo "<br>";
+                              echo $data[0]." ";
+                              echo $data[1]." ";
+                              echo $data[2]." ";
+                              
+                              echo "<br>";
+                              }
+                              ?>
+                            
                                     </pre>
                                     <!-- infoentertain-->
                                         <div id="entertain">
@@ -180,6 +188,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="footer2">
         <div class="overlayer">
@@ -222,7 +231,15 @@
     $(function(){    
       $("#entertain").load("infoentertain.php");
       });
-    </script>  
+    </script>
+    <script>
+      $(function(){    
+      $("#add").load("infoentertain.php");
+      });
+    </script>
+
+
+  
 
     <script src="assets/js/custom.js"></script>
 </html>

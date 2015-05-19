@@ -2,17 +2,13 @@
     <meta charset="utf-8">
     <title>jQuery Popup Overlay</title>
 
-    <!-- Force latest IE, Google Chrome Frame for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-    <meta name="description" content="jQuery plugin for responsive and accessible modal windows and tooltips." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <!-- Bootstrap styles -->
     <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css" />
+    <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/get-shit-done.css" rel="stylesheet" />  
+    <link href="assets/css/demo.css" rel="stylesheet" /> 
 
-    <!-- jQuery -->
-    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
 
     <!-- jQuery Popup Overlay -->
     <script src="jquery.popupoverlay.js"></script>
@@ -31,13 +27,13 @@
     </style>
 
 </head>
-<body><center>
+<body>
         <?php
     @mysql_connect("localhost","zp8461_user","User1234") or die(mysql_error ());
     @mysql_select_db("zp8461_cashsavior") or die (mysql_error());
 
     ?>
-<a class="infosav_open btn btn-round btn-default" href="#infosav">info</a>
+<a class="infosav_open btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;" href="#infosav">info</a>
 
 <!-- infosav -->
 <div id="infosav" class="well" style="max-width:44em;">
@@ -70,5 +66,5 @@
         document.getElementById("dothis").innerHTML = x;
     }
 </script>
-</center>
+
 </body>
