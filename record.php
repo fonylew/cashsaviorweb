@@ -3,7 +3,7 @@
     <title></title>
 </head>
 <body>
-<form action='adding.html' method="post">
+<form action='adding.php' method="post">
  <?php 
     
     $a1 = $_POST["field"];

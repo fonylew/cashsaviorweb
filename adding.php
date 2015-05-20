@@ -17,36 +17,50 @@
             $('select[data-selectsplitter-selector]').selectsplitter();
         }
     </script>
-    <?php echo "hello"; ?>
     <form action="record.php" method="post">
-        <?php @mysql_connect( "localhost", "zp8461_user", "User1234") or die(mysql_error ()); @mysql_select_db( "zp8461_cashsavior") or die (mysql_error()); ?>
-
 
         <h4>Select activity you do !!</h4>
 
-        <select data-selectsplitter-selector>
-            <optgroup label="Entertainment" id="type1">
-                <?php $sql=mysql_query( "SELECT typename,subid FROM type WHERE typeid = 1 "); while ($row=mysql_fetch_array($sql)){ echo "<option value= ".$row[1]. "> " . $row[0] . "</option>"; } ?>
+        <select name="field" required="true">
+            <optgroup label="Entertainment">
+
+                <option value="Entertainment:1">อาหารมื้อพิเศษ</option>
+                <option value="Entertainment:2">ขนมและเครื่องดิ่ม</option>
+                <option value="Entertainment:3">ชมภาพยนตร์</option>
+                <option value="Entertainment:5">สินค้าแบรนด์เนม</option>
+                <option value="Entertainment:6">ท่องเที่ยว</option>
+                <option value="Entertainment:7">ทำบุญ</option>
+                <option value="Entertainment:8">ของขวัญ</option>
 
             </optgroup>
-            <optgroup label="Saving" id="type2">
-                <?php $sql=mysql_query( "SELECT typename,subid FROM type WHERE typeid = 2 "); while ($row=mysql_fetch_array($sql)){ echo "<option  value= ".$row[1]. "> " . $row[0] . "</option>"; } ?>
+            <optgroup label="Saving">
+               <option value="Saving:0">---select---</option> 
+                <option value="Saving:1">ฝากธนาคาร</option>
+                <option value="Saving:2">ซื้อสลากออมสิน</option>
+                <option value="Saving:2">ซื้อพันธบัตรรัฐบาล</option>
 
             </optgroup>
-            <optgroup label="Investment" id="type3">
-                <?php $sql=mysql_query( "SELECT typename,subid FROM type WHERE typeid = 3 "); while ($row=mysql_fetch_array($sql)){ echo "<option value= ".$row[1]. "> " . $row[0] . "</option>"; } ?>
+            <optgroup label="Investment">
+                <option value="Investment:0">---select---</option> 
+                <option value="Investment:1">เงินลงทุน</option>
+                <option value="Investment:2">ขยายกิจการ</option>
+                <option value="Investment:3">ซื้อหุ้น</option>
 
             </optgroup>
-            <optgroup label="Fixed Cost" id="type4">
-
+            <optgroup label="Fixed Cost">
+                <option value="Fixed Cost:0">---select---</option> 
+                <option value="Fixed Cost:1">รายจ่ายประจำ</option>
+                
             </optgroup>
-            <optgroup label="Income" id="type5">
-
+            <optgroup label="Income">
+                <option value="Income:1">---select---</option> 
+                <option value="Income:2">รายได้</option>
+                
             </optgroup>
         </select>
 
 
-        <input type="text" id="cost">
+        <input type="text" name="cost">
 
         <input type="submit" value="done !!">
 </body>
