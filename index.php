@@ -117,12 +117,15 @@
         <div class  = "container tim-container" style="max-width:800px; padding-top:100px;">
           <div class="row">
             <div class="tim-title">
+
               <h1 class="text-center">
+
                 Investment<br>
                 <small class="subtitle">adsjkf;asdjkf;lasjd;lfksaj;ldfjkalsdjf;</small>
               </h1>
               <p>Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. 
                 Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. </p>
+                </div>
             </div>
         </div>
         <div class  = "container tim-container" style="max-width:800px; padding-top:100px;">
@@ -135,6 +138,7 @@
               <p>Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. 
                 Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. </p>
             </div>
+            </div>
         </div>
         <div class  = "container tim-container" style="max-width:800px; padding-top:100px;">
           <div class="row">
@@ -145,6 +149,7 @@
               </h1>
               <p>Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. 
                 Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. </p>
+            </div>
             </div>
         </div>
           
@@ -239,9 +244,26 @@
   the FB.login() function when clicked.
 -->
 
-
 </div>
-      
+      <div class="footer2" style="margin-top: 20px;
+    background-color: #00BCD4;
+    background-color: rgba(0, 188, 212, 0.98);
+    background-attachment: fixed;
+    position: relative; margin-top: 100px;">
+        <div class="overlayer">
+            <div class="container">
+                <div class="row">
+                    <div class="credits" style="border-top: 1px solid #BBBBBB;
+    margin-top: 85px;
+    padding: 20px 0 15px;
+    text-align: center;
+    color: #EEE;">
+                        Outcube.me
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
