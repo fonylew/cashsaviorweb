@@ -35,7 +35,7 @@
 
     ?>
 
-<a class="infoen_open btn btn-round btn-default" href="#infoen">info</a>
+<a class="infoen_open btn btn-round btn-default" href="#infoen">See more</a>
 
 <!-- infoen -->
 <div id="infoen" class="well" style="max-width:44em;">
@@ -59,6 +59,7 @@
                               echo "<br>";
                               }
     ?>
+    <br>
     <button onclick="myFunction()" class="infoen_close btn btn-default">Done !!</button>
     </center>
 </div>

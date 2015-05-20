@@ -17,12 +17,6 @@
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <!-- jQuery Popup Overlay -->
     <script src="jquery.popupoverlay.js"></script>
-     <script>
-      function load() {
-        alert("load event detected!");
-      }
-      window.onload = load;
-    </script>
 
 </head>
 
@@ -102,7 +96,7 @@
                                     </pre>
                                         <!-- infosaving-->
                                       <div id="saving">
-                                        <button href="#" class="btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;">See More</button>
+                                     
                                       </div>
                                         
 
@@ -112,7 +106,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
-                                         
+                                          
                                     </div>
                                      <h4>Investment</h4>
                                     <pre class="prettyprint prettyprinted" style="width: 25%;">
@@ -131,9 +125,7 @@
                                     </pre>
                                          <!-- infoinvest-->
                                     
-                                        <div id="invest">
-                                          <button href="#" class="btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;">See More</button>
-                                        
+                                        <div id="invest">                                      
                                         </div>
                                     
                                      
@@ -144,10 +136,11 @@
                             <div class="col col-md-4">
                                 <div class="container">
                                     <div class="row">
-                                        <img class="profile-img" src='pic/accountlogo.png' style="margin-right: 1%;"></img>
-                                       
+                                  
+                                     
                                               </div>
                                     <h4>Entertainment</h4>
+                                    <a href="http://outcube.me/cashsavior/adding.php">add more record !!</a>
                                     <pre class="prettyprint prettyprinted" style="width: 25%;">
                                   
                               <?php    
@@ -172,7 +165,8 @@
                                     </pre>
                                     <!-- infoentertain-->
                                         <div id="entertain">
-                                          <button href="#" class="btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;">See More</button>
+                                        
+                                        
                                         </div>
                                     
                                      </ul>
@@ -232,11 +226,13 @@
       $("#entertain").load("infoentertain.php");
       });
     </script>
-    <script>
-      $(function(){    
-      $("#add").load("infoentertain.php");
+    
+    <script> 
+    $(function(){    
+      $("#record").load("record.php");
       });
     </script>
+    
 
 
   

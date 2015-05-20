@@ -30,7 +30,7 @@
 
 </head>
 <body>
-<a class="infoin_open btn btn-round btn-default" href="#infoin">info</a>
+<a class="infoin_open btn btn-round btn-default" href="#infoin">See more</a>
 
 <!-- infoin -->
 <div id="infoin" class="well" style="max-width:44em; z-index: 100001;">
@@ -49,12 +49,6 @@
 	$('#infoin').popup();
 	});
 	</script>
-<script>
-	function myFunction(){
-		var x = document.getElementById("qwerqwer").value;
-		alert(x);
-		document.getElementById("dothis").innerHTML = x;
-	}
-</script>
+
 
 </body>
