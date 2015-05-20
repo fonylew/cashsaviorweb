@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>CashSavior:: Add Record</title>
 
+    <link href="bootstrap3/css/custom.css" rel="stylesheet" />
     <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
     <link href="bootstrap3/css/font-awesome.css" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

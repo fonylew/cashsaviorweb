@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css" />
     <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/get-shit-done.css" rel="stylesheet" />  
+
+    <link href="bootstrap3/css/custom.css" rel="stylesheet" />
     <link href="assets/css/demo.css" rel="stylesheet" /> 
 
 
@@ -33,13 +35,13 @@
     @mysql_select_db("zp8461_cashsavior") or die (mysql_error());
 
     ?>
-<a class="infoin_open btn btn-round btn-default" href="#infoin">See more</a>
+<a class="infoin_open btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;" href="#infoin">See more</a>
 
 <!-- infoin -->
-<div id="infoin" class="well" style="max-width:44em; z-index: 100001;">
+<div id="infoin" class="well" style="min-width:44em; padding: 2% 2%; padding-top: 0%;">
 
     <center>
-	<h4>invest example</h4>
+	<h4 style="width: relative; background-color:#4DD0E1; border-radius: 5px; padding: 5%;">investment examples</h4>
         <br>
     <?php    
         $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
@@ -58,7 +60,7 @@
                               }
     ?>
     <br>
-    <button onclick="myFunction()" class="infoin_close btn btn-default">Done !!</button>
+    <button onclick="myFunction()" class="infoin_close btn btn-success btn-round btn-lg">Done !!</button>
 	</center>
 </div>
 
