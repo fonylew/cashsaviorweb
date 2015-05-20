@@ -15,18 +15,18 @@
         <h4>Select activity you do !!</h4> Entertainment
         <br>
         <select id="type1">
-            <?php $sql=m ysql_query( "SELECT typename,subid FROM type WHERE typeid = 1 "); while ($row=m ysql_fetch_array($sql)){ echo "<option value= ".$row[1]. "> " . $row[0] . "</option>"; } ?>
+            <?php $sql=mysql_query( "SELECT typename,subid FROM type WHERE typeid = 1 "); while ($row=mysql_fetch_array($sql)){ echo "<option value= ".$row[1]. "> " . $row[0] . "</option>"; } ?>
         </select>
         <br> Saving
         <br>
         <select id="type2">
-            <?php $sql=m ysql_query( "SELECT typename,subid FROM type WHERE typeid = 2 "); while ($row=m ysql_fetch_array($sql)){ echo "<option  value= ".$row[1]. "> " . $row[0] . "</option>"; } ?>
+            <?php $sql=mysql_query( "SELECT typename,subid FROM type WHERE typeid = 2 "); while ($row=mysql_fetch_array($sql)){ echo "<option  value= ".$row[1]. "> " . $row[0] . "</option>"; } ?>
         </select>
 
         <br> Investment
         <br>
         <select id="type3">
-            <?php $sql=m ysql_query( "SELECT typename,subid FROM type WHERE typeid = 3 "); while ($row=m ysql_fetch_array($sql)){ echo "<option value= ".$row[1]. "> " . $row[0] . "</option>"; } ?>
+            <?php $sql=mysql_query( "SELECT typename,subid FROM type WHERE typeid = 3 "); while ($row=mysql_fetch_array($sql)){ echo "<option value= ".$row[1]. "> " . $row[0] . "</option>"; } ?>
 
         </select>
         <br>
