@@ -65,19 +65,13 @@
     </center>
 </div>
 
-<p id="dothis"></p>
+
 
 <script>
     $(document).ready(function () {
     $('#infoen').popup();
     });
     </script>
-<script>
-    function myFunction(){
-        var x = document.getElementById("qwerqwer").value;
-        alert(x);
-        document.getElementById("dothis").innerHTML = x;
-    }
-</script>
+
 
 </body>

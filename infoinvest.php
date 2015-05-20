@@ -1,6 +1,5 @@
 <head>
     <meta charset="utf-8">
-    <title>jQuery Popup Overlay</title>
     <!-- Bootstrap styles -->
     <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css" />
     <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
@@ -63,7 +62,6 @@
 	</center>
 </div>
 
-<p id="dothis"></p>
 
 <script>
 	$(document).ready(function () {
