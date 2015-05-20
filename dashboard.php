@@ -70,7 +70,23 @@
                 </ul>
             </div>
             <div class="row" id="leftnav">
-
+        <?php
+        $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid = 1 OR typeid =2 
+                            OR typeid =3 OR typeid = 4 ")or die("Invalid query: "  .mysql_error());
+        $data5=mysql_fetch_array($query);
+        $sumuse = $data5[0];
+        ?>
+        <?php
+        $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid =4 ")or die("Invalid query: "  .mysql_error());
+        $data6=mysql_fetch_array($query);
+        $sumfix = $data6[0];
+        ?>
+        <?php
+        $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid =5")or die("Invalid query: "  .mysql_error());
+        $data7=mysql_fetch_array($query);
+        $salary = $data7[0];
+        $maxfill = ($salary - $sumfix)/4;
+        ?>
                 <div class="col col-lg-10 col-lg-offset-2 col-md-9 col-md-offset-3 col-sm-9 col-sm-offset-3 col-xs-9 col-xs-offset-3">
                     <div class="container-fluid" style="padding-top:100px; padding-right:20px; left:200;">
                         <div class="row centered-form center-block">
@@ -78,7 +94,14 @@
                                 <nav class="navbar navbar-ct-red">
                                     <div class="collapse navbar-collapse">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">used/Left</a>
+                                            <li><a href="#">
+                                            <?php
+                                            echo "use all (include fixcost)". $sumuse ." /";
+                                            echo "fixcost ". $sumfix ." /";
+                                            echo "salary". $salary ;
+                                            echo "maxfill". ($maxfill *4);
+                                            ?>
+                                            </a>
                                             </li>
                                         </ul>
 
@@ -99,58 +122,8 @@
                                     <div class="row">
                                         <canvas id="entCanvas" class="canvases" width="250" height="250"></canvas>
                                     </div>
-                                    <h4>Saving</h4>
-                                    <pre class="prettyprint prettyprinted" style="width: 25%;">
-
-                                        
-                                    </pre>
-                                    <!-- infosaving-->
-                                    <div id="saving">
-
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            <div class="col col-md-4">
-                                <div class="container">
-                                    <div class="row">
-                                        <canvas id="savCanvas" class="canvases" width="250" height="250"></canvas>
-
-                                    </div>
-                                    <h4>Investment</h4>
-                                    <pre class="prettyprint prettyprinted" style="width: 25%;">
-                                        <ul>
-                                        
-                                            <li><a>list1</a></li>
-                                            <li><a>list2</a></li>
-                                            <li><a>list3</a></li>
-                                            <li><a>list4</a></li>
-                                            <li><a>list5</a></li>
-                                            <li><a>list6</a></li>
-                                            <li><a>list7</a></li>
-                                            <li><a>list8</a></li>
-                                             
-                                        </ul>
-                                    </pre>
-                                    <!-- infoinvest-->
-
-                                    <div id="invest">
-                                    </div>
-
-
-
-
-                                </div>
-                            </div>
-                            <div class="col col-md-4">
-                                <div class="container">
-                                    <div class="row">
-                                        <canvas id="invCanvas" class="canvases" width="250" height="250"></canvas>
-
-                                    </div>
-                                    <h4>Entertainment</h4>
-                                    <a href="http://outcube.me/cashsavior/adding.php">add more record !!</a>
+                                     <h4>Entertainment</h4>
+                               
                                     <pre class="prettyprint prettyprinted" style="width: 25%;">
                                   
                               <?php    
@@ -165,18 +138,103 @@
                               while($data=mysql_fetch_array($query)) {
                               echo "<br>";
                               echo $data[0]." ";
-                              echo $data[1]." ";
+                              echo $data[1]." baht ";
                               echo $data[2]." ";
                               
                               echo "<br>";
                               }
                               ?>
+
+                            <?php
+                                     $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid = 1")or die("Invalid query: "  .mysql_error());
+                                     $data=mysql_fetch_array($query);
+                                    echo "Total payment entertainment :". $data[0] ." baht";
+                            ?>
                             
                                     </pre>
                                     <!-- infoentertain-->
                                     <div id="entertain">
 
+                                    </div>
 
+
+                                </div>
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="container">
+                                    <div class="row">
+                                        <canvas id="savCanvas" class="canvases" width="250" height="250"></canvas>
+
+                                    </div>
+                                    <h4>Saving</h4>
+                                    <pre class="prettyprint prettyprinted" style="width: 25%;">
+                                    <?php    
+                                      $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
+                                      FROM u111111
+                                      JOIN type ON u111111.typeid = type.typeid
+                                      AND u111111.subid = type.subid
+                                      WHERE u111111.typeid =2
+                                      ORDER BY u111111.date DESC LIMIT 2
+
+                                      ") or die("Invalid query: "  .mysql_error());
+                                      while($data=mysql_fetch_array($query)) {
+                                      echo "<br>";
+                                      echo $data[0]." ";
+                                      echo $data[1]." baht ";
+                                      echo $data[2]." ";
+                                      
+                                      echo "<br>";
+                                      }
+                                      ?>
+                                    <?php
+                                     $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid = 2")or die("Invalid query: "  .mysql_error());
+                                     $data=mysql_fetch_array($query);
+                                    echo "Total payment saving :". $data[0] ." baht";
+                                     ?>
+
+                                        
+                                    </pre>
+                                    <!-- infosaving-->
+                                    <div id="saving">
+                        
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col col-md-4">
+                                <div class="container">
+                                    <div class="row">
+                                        <canvas id="invCanvas" class="canvases" width="250" height="250"></canvas>
+
+                                    </div>
+                                    <h4>Investment</h4>
+                                    <pre class="prettyprint prettyprinted" style="width: 25%;">
+                                     <?php    
+                                          $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
+                                          FROM u111111
+                                          JOIN type ON u111111.typeid = type.typeid
+                                          AND u111111.subid = type.subid
+                                          WHERE u111111.typeid =3
+                                          ORDER BY u111111.date DESC LIMIT 2
+
+                                          ") or die("Invalid query: "  .mysql_error());
+                                          while($data=mysql_fetch_array($query)) {
+                                          echo "<br>";
+                                          echo $data[0]." ";
+                                          echo $data[1]." baht ";
+                                          echo $data[2]." ";
+                                          
+                                          echo "<br>";
+                                          }
+                                          ?>
+                                          <?php
+                                            $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid = 3")or die("Invalid query: "  .mysql_error());
+                                            $data=mysql_fetch_array($query);
+                                            echo "Total payment investment :". $data[0]." baht";
+                                          ?>
+                                    </pre>
+                                    <!-- infoinvest-->
+
+                                    <div id="invest">
                                     </div>
 
                                     </ul>
@@ -193,6 +251,24 @@
         </div>
     </div>
 
+    <?php
+        $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid = 1")or die("Invalid query: "  .mysql_error());
+        $data2=mysql_fetch_array($query);
+        $ent = $data2[0];
+        $entper = $ent / $maxfill *100;
+    ?>
+    <?php
+        $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid = 2")or die("Invalid query: "  .mysql_error());
+        $data3=mysql_fetch_array($query);
+        $sav = $data3[0];
+        $savper = $sav / $maxfill *100;
+    ?>
+    <?php
+        $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid = 3")or die("Invalid query: "  .mysql_error());
+        $data4=mysql_fetch_array($query);
+        $inv = $data4[0];
+        $invper = $inv / ( $maxfill*2 ) *100;
+    ?>
 
     <div class="footer2">
         <div class="overlayer">
@@ -213,9 +289,9 @@
     </div>
         <script>
         //percentage value from korn
-        var percent_ent=50;
-        var percent_sav=70;
-        var percent_inv=90;
+        var percent_ent=<?php echo $entper ?>;
+        var percent_sav=<?php echo $savper?>;
+        var percent_inv=<?php echo $invper?>;
         function fillent(percent){
             var ent=document.getElementById("entCanvas");
             var ectx=ent.getContext("2d");

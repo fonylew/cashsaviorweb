@@ -1,12 +1,11 @@
 <head>
     <meta charset="utf-8">
     <title>jQuery Popup Overlay</title>
-
-    <!-- Force latest IE, Google Chrome Frame for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-    <meta name="description" content="jQuery plugin for responsive and accessible modal windows and tooltips." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css" />
+    <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/get-shit-done.css" rel="stylesheet" />  
+    <link href="assets/css/demo.css" rel="stylesheet" /> 
 
 
     <!-- jQuery -->
@@ -30,6 +29,11 @@
 
 </head>
 <body>
+    <?php
+    @mysql_connect("localhost","zp8461_user","User1234") or die(mysql_error ());
+    @mysql_select_db("zp8461_cashsavior") or die (mysql_error());
+
+    ?>
 <a class="infoin_open btn btn-round btn-default" href="#infoin">See more</a>
 
 <!-- infoin -->
@@ -37,7 +41,24 @@
 
     <center>
 	<h4>invest example</h4>
-    
+        <br>
+    <?php    
+        $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
+                              FROM u111111
+                              JOIN type ON u111111.typeid = type.typeid
+                              AND u111111.subid = type.subid
+                              WHERE u111111.typeid =3
+                                ") or die("Invalid query: "  .mysql_error());
+        while($data=mysql_fetch_array($query)) {
+                              echo "<br>";
+                              echo $data[0]." ";
+                              echo $data[1]." ";
+                              echo $data[2]." ";
+                              
+                              echo "<br>";
+                              }
+    ?>
+    <br>
     <button onclick="myFunction()" class="infoin_close btn btn-default">Done !!</button>
 	</center>
 </div>

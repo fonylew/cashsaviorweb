@@ -40,31 +40,35 @@
 
     <center>
     <h4>saving example</h4>
+    <br>
     <?php    
-        $query = mysql_query("SELECT uid FROM users") or die("Invalid query: "  .mysql_error());
-    while($data=mysql_fetch_array($query)) {
-        $typename = "name" . $data[0];
-            echo $typename;
-    
-        }
+        $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
+                              FROM u111111
+                              JOIN type ON u111111.typeid = type.typeid
+                              AND u111111.subid = type.subid
+                              WHERE u111111.typeid =2
+                                ") or die("Invalid query: "  .mysql_error());
+        while($data=mysql_fetch_array($query)) {
+                              echo "<br>";
+                              echo $data[0]." ";
+                              echo $data[1]." ";
+                              echo $data[2]." ";
+                              
+                              echo "<br>";
+                              }
     ?>
+    <br>
     <button onclick="myFunction()" class="infosav_close btn btn-default">Done !!</button>
     </center>
 </div>
 
-<p id="dothis"></p>
+
 
 <script>
     $(document).ready(function () {
     $('#infosav').popup();
     });
     </script>
-<script>
-    function myFunction(){
-        var x = document.getElementById("qwerqwer").value;
-        alert(x);
-        document.getElementById("dothis").innerHTML = x;
-    }
-</script>
+
 
 </body>
