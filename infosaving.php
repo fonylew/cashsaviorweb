@@ -30,10 +30,19 @@
 
 </head>
 <body>
+    <?php
+    if( $_REQUEST["id"] )
+    {
+     $userid = $_REQUEST['id'];
+     $tablename="U" . $userid;
+    
+    }
+    ?>
+    <?php
         <?php
     @mysql_connect("localhost","zp8461_user","User1234") or die(mysql_error ());
     @mysql_select_db("zp8461_cashsavior") or die (mysql_error());
-
+        ?>
     ?>
 <a class="infosav_open btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;" href="#infosav">See more</a>
 
@@ -44,11 +53,11 @@
     <h4 style="width: relative; background-color:#4DD0E1; border-radius: 5px; padding: 5%;">saving example</h4>
     <br>
     <?php    
-        $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
-                              FROM u111111
-                              JOIN type ON u111111.typeid = type.typeid
-                              AND u111111.subid = type.subid
-                              WHERE u111111.typeid =2
+        $query = mysql_query("SELECT type.typename, $tablename.amount, $tablename.date
+                              FROM $tablename
+                              JOIN type ON $tablename.typeid = type.typeid
+                              AND $tablename.subid = type.subid
+                              WHERE $tablename.typeid =2
                                 ") or die("Invalid query: "  .mysql_error());
         while($data=mysql_fetch_array($query)) {
                               echo "<br>";
