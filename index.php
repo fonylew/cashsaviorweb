@@ -16,6 +16,7 @@
     <meta charset="UTF-8">
 
     <style>
+        @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
         .carousel-inner > .item > img,
         .carousel-inner > .item > a > img {
             width: 70%;
@@ -23,7 +24,7 @@
         }
         .carousel .item {
             width: 100%; /*slider width*/
-            max-height: 600px; /*slider height*/
+            max-height: 550px; /*slider height*/
         }
         .carousel .item img {
             width: 100%; /*img width*/
@@ -156,26 +157,17 @@
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     <img src="pic/Investment.jpg" alt="Investment">
-                    <div class="carousel-caption">
-                        <h3>Investment</h3>
-                        <p>Give an improvement to your income.</p>
-                    </div>
+                    
                 </div>
 
                 <div class="item">
                     <img src="pic/saving.jpg" alt="Saving">
-                    <div class="carousel-caption">
-                        <h3>Saving</h3>
-                        <p>Always prepare for emergency pay.</p>
-                    </div>
+                    
                 </div>
 
                 <div class="item">
                     <img src="pic/entertainment.jpg" alt="Entertainment">
-                    <div class="carousel-caption">
-                        <h3>Entertainment</h3>
-                        <p>Life is about happiness.</p>
-                    </div>
+                    
                 </div>
             </div>
 
