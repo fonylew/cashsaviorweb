@@ -10,6 +10,12 @@
     <link href="bootstrap3/css/font-awesome.css" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/bootstrap.selectsplitter/0.1.0/bootstrap-selectsplitter.min.js"></script>
+    <style>
+        #whatever{
+            font-size: 1.2rem;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -18,11 +24,11 @@
             $('select[data-selectsplitter-selector]').selectsplitter();
         }
     </script>
-    <form action="record.php" method="post">
+    <form action="record.php" method="post" style="width: 800px; height: 600px; border:1px solid #F0F0F0; padding:15%;">
 
         <h4>Select activity you do !!</h4>
 
-        <select name="field" required="true">
+        <select name="field" required="true" id="whatever">
             <optgroup label="Entertainment">
 
                 <option value="Entertainment:1">อาหารมื้อพิเศษ</option>
