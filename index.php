@@ -132,10 +132,10 @@
                                     <button type="submit" class="btn btn-default btn-round" style="margin:15px 10px;">submit</button>
                                 </li>
                                 <li>
-                                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
+                                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" style="margin:25px 10px;">
+                                        </fb:login-button>
 
-    <div id="status"></div>
+                                        <div id="status"></div>
                                 </li>
                             </ul>
                         </div>
