@@ -22,21 +22,21 @@
 
 <body>
     <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '445214508974444',
-      xfbml      : true,
-      version    : 'v2.3'
-    });
-  };
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '445214508974444',
+                xfbml      : true,
+                version    : 'v2.3'
+            });
+        };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
         
         function logout(){
             FB.logout(function(response) {
@@ -66,7 +66,7 @@
                                 </li>
                                 <li class="divider"></li>
                                 <li>
-                                    <button href="#" class="btn btn-round btn-default" onclick="logout()">LogOut</button>
+                                    <button href="#" class="btn btn-round btn-default" onclick="FB.logout()">Log Out</button>
                                 </li>
                             </ul>
                         </div>
