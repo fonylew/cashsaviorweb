@@ -10,6 +10,16 @@
     <link href="bootstrap3/css/font-awesome.css" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/bootstrap.selectsplitter/0.1.0/bootstrap-selectsplitter.min.js"></script>
+  <!--date picker-->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
 </head>
 
 <body>
@@ -59,10 +69,10 @@
                 
             </optgroup>
         </select>
+        <br>
 
-
-        <input type="text" name="cost">
-
+        <p>Cost: <input type="text" name="cost"> baht</p>
+        <p>Date: <input type="text" id="datepicker" name="date"></p>
         <input type="submit" value="done !!">
 </body>
 

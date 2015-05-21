@@ -8,8 +8,9 @@
     
     $a1 = $_POST["field"];
     $a2 = $_POST["cost"]; 
+    $date = $_POST["date"];
     $temp = explode(":", $a1);
-    $note ="asdfasdf";
+    $note ="";
     $type = $temp[0];
     $subid = $temp[1];
 
@@ -19,8 +20,10 @@
     if($type =="Fixed Cost") $typeid = 4;
     if($type =="Income") $typeid = 5;
 
-    echo $typeid;
-    echo $subid;
+    echo $type;
+    echo " already add!! ";
+    echo $date;
+
     ?>
     <?php
     @mysql_connect("localhost","zp8461_user","User1234") or die(mysql_error ());

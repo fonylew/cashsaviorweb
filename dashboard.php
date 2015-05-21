@@ -72,13 +72,7 @@
                                         background-color: #80DEEA;
     background-color: rgba(128, 222, 234, 0.98); padding-top: 70px;">
                 <ul class="nav navbar-stacked">
-                    <li><a href="#">test1</a>
-                    </li>
-                    <li><a href="#">test2</a>
-                    </li>
-                    <li><a href="#">test3</a>
-                    </li>
-                    <li><a href="#">test4</a>
+                    <li><a href="http://outcube.me/cashsavior/adding.php">test1</a>
                     </li>
                 </ul>
             </div>
@@ -120,8 +114,7 @@
 
                                         <!-- edit money bar-->
                                         <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
-                                            <div id="editbutton">
-                                                <button href="#" class="btn btn-round btn-default">Edit</button>
+                                                <a href="http://outcube.me/cashsavior/adding.php" class="btn btn-round btn-default">Add your payment!</a>
                                             </div>
 
                                         </ul>
@@ -393,11 +386,7 @@
 <script src="assets/js/gsdk-radio.js"></script>
 <script src="assets/js/gsdk-bootstrapswitch.js"></script>
 <script src="assets/js/get-shit-done.js"></script>
-<script>
-    $(function () {
-        $("#editbutton").load("edit.php");
-    });
-</script>
+
 <script>
     $(function () {
         $("#saving").load("infosaving.php");
