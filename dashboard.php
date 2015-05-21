@@ -336,6 +336,9 @@
 
 <script>
     $(function () {
+        $.post("infosaving.php", {
+                        id: <?php echo $userid ?>
+                    });
         $("#saving").load("infosaving.php");
     });
 </script>
