@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -23,8 +22,8 @@
 
 <body>
     <?php @mysql_connect( "localhost", "zp8461_user", "User1234") or die(mysql_error ()); @mysql_select_db( "zp8461_cashsavior") or die (mysql_error()); ?>
-    <?php if( $_GET[ "id"] ){ $userid=$ _GET[ 'id']; echo "ID: ". $userid; } if( $_GET[ "name"] ){ $name=$ _GET[ 'name']; echo "Welcome ". $name; } ?>
-    <?php $selres=m ysql_query( "SELECT * FROM users WHERE uid = '$userid'"); $num_rows=m ysql_num_rows($selres); $tablename="U" . $userid; if($num_rows !=0 ) { //have user already $sql_create_tb=m ysql_query( "CREATE TABLE IF NOT EXISTS $tablename(typeid INT NOT NULL, subid INT NOT NULL, amount INT NOT NULL, date DATE NOT NULL, note VARCHAR(70) NOT NULL)"); } else { //new user $sql_add=m ysql_query( "INSERT INTO users VALUES('$userid')"); $sql_create_tb=m ysql_query( "CREATE TABLE $tablename(typeid INT NOT NULL, subid INT NOT NULL, amount INT NOT NULL, date DATE NOT NULL, note VARCHAR(70) NOT NULL)"); } ?>
+    <?php if( $_GET[ "id"] ){ $userid=$_GET[ 'id']; echo "ID: ". $userid; } if( $_GET[ "name"] ){ $name=$_GET[ 'name']; echo "Welcome ". $name; } ?>
+    <?php $selres=mysql_query( "SELECT * FROM users WHERE uid = '$userid'"); $num_rows=mysql_num_rows($selres); $tablename="U" . $userid; if($num_rows !=0 ) { //have user already $sql_create_tb=mysql_query( "CREATE TABLE IF NOT EXISTS $tablename(typeid INT NOT NULL, subid INT NOT NULL, amount INT NOT NULL, date DATE NOT NULL, note VARCHAR(70) NOT NULL)"); } else { //new user $sql_add=mysql_query( "INSERT INTO users VALUES('$userid')"); $sql_create_tb=mysql_query( "CREATE TABLE $tablename(typeid INT NOT NULL, subid INT NOT NULL, amount INT NOT NULL, date DATE NOT NULL, note VARCHAR(70) NOT NULL)"); } ?>
     <div class="main">
         <div class="container-fluid">
             <div class="row" id="navbar">
@@ -56,10 +55,9 @@
                 </ul>
             </div>
             <div class="row" id="leftnav">
-                <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid = 1 OR typeid =2 
-                            OR typeid =3 OR typeid = 4 ")or die( "Invalid query: " .mysql_error()); $data5=mysql_fetch_array($query); $sumuse=$ data5[0]; ?>
-                <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid =4 ")or die( "Invalid query: " .mysql_error()); $data6=mysql_fetch_array($query); $sumfix=$ data6[0]; ?>
-                <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid =5")or die( "Invalid query: " .mysql_error()); $data7=mysql_fetch_array($query); $salary=$ data7[0]; $maxfill=( $salary - $sumfix)/4; ?>
+                <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid = 1 OR typeid =2 OR typeid =3 OR typeid = 4 ")or die( "Invalid query: ".mysql_error()); $data5=mysql_fetch_array($query); $sumuse=$data5[0]; ?>
+                <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid =4 ")or die( "Invalid query: " .mysql_error()); $data6=mysql_fetch_array($query); $sumfix=$data6[0]; ?>
+                <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid =5")or die( "Invalid query: " .mysql_error()); $data7=mysql_fetch_array($query); $salary=$data7[0]; $maxfill=( $salary - $sumfix)/4; ?>
                 <div class="col col-lg-10 col-lg-offset-2 col-md-9 col-md-offset-3 col-sm-9 col-sm-offset-3 col-xs-9 col-xs-offset-3">
                     <div class="container-fluid" style="padding-top:100px; padding-right:20px; left:200;">
                         <div class="row centered-form center-block">
@@ -222,9 +220,9 @@
     </div>
     </div>
 
-    <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid = 1")or die( "Invalid query: " .mysql_error()); $data2=mysql_fetch_array($query); $ent=$ data2[0]; $entper=$ ent / $maxfill *100; ?>
-    <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid = 2")or die( "Invalid query: " .mysql_error()); $data3=mysql_fetch_array($query); $sav=$ data3[0]; $savper=$ sav / $maxfill *100; ?>
-    <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid = 3")or die( "Invalid query: " .mysql_error()); $data4=mysql_fetch_array($query); $inv=$ data4[0]; $invper=$ inv / ( $maxfill*2 ) *100; ?>
+    <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid = 1")or die( "Invalid query: ".mysql_error()); $data2=mysql_fetch_array($query); $ent=$data2[0]; $entper=$ent / $maxfill *100; ?>
+    <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid = 2")or die( "Invalid query: ".mysql_error()); $data3=mysql_fetch_array($query); $sav=$data3[0]; $savper=$sav / $maxfill *100; ?>
+    <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid = 3")or die( "Invalid query: ".mysql_error()); $data4=mysql_fetch_array($query); $inv=$data4[0]; $invper=$inv / ( $maxfill*2 ) *100; ?>
 
     <div class="footer2" style="margin-top: 20px;
     background-color: #00BCD4;
@@ -253,9 +251,9 @@
     </div>
     <script>
         //percentage value from korn
-        var percent_ent = <? php echo $entper ?> ;
-        var percent_sav = <? php echo $savper ?> ;
-        var percent_inv = <? php echo $invper ?> ;
+        var percent_ent=<?php echo $entper ?>;
+        var percent_sav=<?php echo $savper ?>;
+        var percent_inv=<?php echo $invper ?>;
 
         function fillent(percent) {
             var ent = document.getElementById("entCanvas");
@@ -336,9 +334,9 @@
 
 <script>
     $(function () {
-        $.post("infosaving.php", {
-                        id: <?php echo $userid ?>
-                    });
+//        $.post("infosaving.php", {
+//                        id: <?php echo $userid ?>
+//                    });
         $("#saving").load("infosaving.php");
     });
 </script>
@@ -359,5 +357,4 @@
     });
 </script>
 <script src="assets/js/custom.js"></script>
-
 </html>
