@@ -39,11 +39,11 @@
                         <a class="navbar-brand" href="#">Cash Savior</a>
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
-                                <li><a href="#">Username</a>
+                                <li><a href="#"><?php echo $name ?></a>
                                 </li>
                                 <li class="divider"></li>
                                 <li>
-                                    <button href="#" class="btn btn-round btn-default">LogOut</button>
+                                    <button href="#" class="btn btn-round btn-default" onclick="logout()">LogOut</button>
                                 </li>
                             </ul>
                         </div>
