@@ -23,7 +23,14 @@
 <body>
     <?php @mysql_connect( "localhost", "zp8461_user", "User1234") or die(mysql_error ()); @mysql_select_db( "zp8461_cashsavior") or die (mysql_error()); ?>
     <?php if( $_GET[ "id"] ){ $userid=$_GET[ 'id']; echo "ID: ". $userid; } if( $_GET[ "name"] ){ $name=$_GET[ 'name']; echo "Welcome ". $name; } ?>
-    <?php $selres=mysql_query( "SELECT * FROM users WHERE uid = '$userid'"); $num_rows=mysql_num_rows($selres); $tablename="U" . $userid; if($num_rows !=0 ) { //have user already $sql_create_tb=mysql_query( "CREATE TABLE IF NOT EXISTS $tablename(typeid INT NOT NULL, subid INT NOT NULL, amount INT NOT NULL, date DATE NOT NULL, note VARCHAR(70) NOT NULL)"); } else { //new user $sql_add=mysql_query( "INSERT INTO users VALUES('$userid')"); $sql_create_tb=mysql_query( "CREATE TABLE $tablename(typeid INT NOT NULL, subid INT NOT NULL, amount INT NOT NULL, date DATE NOT NULL, note VARCHAR(70) NOT NULL)"); } ?>
+    <?php $selres=mysql_query( "SELECT * FROM users WHERE uid = '$userid'"); $num_rows=mysql_num_rows($selres); $tablename="U" . $userid; 
+    if($num_rows !=0 ) { 
+    //have user already 
+    $sql_create_tb=mysql_query( "CREATE TABLE IF NOT EXISTS $tablename(typeid INT NOT NULL, subid INT NOT NULL, amount INT NOT NULL, date DATE NOT NULL, note VARCHAR(70) NOT NULL)"); 
+    } else { 
+    //new user 
+    $sql_add=mysql_query( "INSERT INTO users VALUES('$userid')"); $sql_create_tb=mysql_query( "CREATE TABLE $tablename(typeid INT NOT NULL, subid INT NOT NULL, amount INT NOT NULL, date DATE NOT NULL, note VARCHAR(70) NOT NULL)"); }
+    ?>
     <div class="main">
         <div class="container-fluid">
             <div class="row" id="navbar">
