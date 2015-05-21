@@ -183,40 +183,64 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <div class="main">
-            <div class="container tim-container" style="max-width:800px; padding-top:100px;">
-                <div class="row">
-                    <div class="tim-title">
+     <div class="main">
+        <div class="container tim-container" style="max-width:800px; padding-top:100px;">
+            <div class="row">
+                <div class="tim-title">
 
-                        <h1 class="text-center">
+                    <h1 class="text-center">
+
+                CashSavior
+                
+                <small class="subtitle"><center>แอปพลิเคชันบริหารจัดการเงินที่จะทำให้เงินของคุณ <br>ตั้งอยู่บนความสมดุล</center></small>
+              </h1>
+                    <p><center>Cashsavior เป็นแอปพลิเคชั่นที่ได้นำหลักพุทธศาสนา "โภควิภาค" มาประยุกต์ใช้กับการบริหารจัดการเงิน <br> โดยหลักโภควิภาคนั้นเป็นหลักที่ยืดความสมดุล
+                      โดยแบ่งค่าใช้จ่ายที่นอกเหนือจากค่าใช้จ่ายที่จำเป็นในชีวิติประจำวัน หรือ fixcost แบ่งออกเป็น 4 ส่วน คือ เงินในส่วนอดออม 1 ส่วน เช่น การฝากธนาคาร
+                      การซื้อพันธบัตร ส่วนต่อมาคือ เงินใช้สำหรับหาความบันเทิง 1 ส่วน เช่น เที่ยวสวนสนุก ดูหนัง และส่วนที่เหลือคือ เงินที่ใช้สำหรับการลงทุนในอนาคตอีก 2 ส่วน
+                      เช่น การขยายกิจการ การอ่านหนังสือหาความรู้ 
+                    </center></p>
+                </div>
+            </div>
+        </div>
+        <div class="container tim-container" style="max-width:800px; padding-top:100px;">
+            <div class="row">
+                <div class="tim-title">
+
+                    <h1 class="text-center">
 
                 Investment<br>
-                <small class="subtitle">adsjkf;asdjkf;lasjd;lfksaj;ldfjkalsdjf;</small>
+                <small class="subtitle">การใช้เงินเพื่อลงทุนในอนาคต</small>
               </h1>
-                        <p>Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. </p>
-                    </div>
+                    <p><center>การใช้เงินเพื่อลงทุนในอนาคต มีความสำคัญถึง 2 ส่วนจาก 4 ส่วน เพราะเป็นการที่นำเงินที่เราได้มา ใช้สำหรับการหาเงินภายภาคหน้า
+                      ไว้เผื่อต่อยอดเงินในอนาคต ซึ่งการใช้เงินประเภทนี้จะได้แก่ การอ่านหนังสือเพื่อหาความรู้ต่อยอด การลงทุนธุรกิจต่างๆ การขยายกิจการ การเสริมทักษะในด้านต่างๆ
+                      เช่น การเรียนภาษาที่สาม เป็นต้น
+                    </center>
+                    </p>
                 </div>
             </div>
-            <div class="container tim-container" style="max-width:800px; padding-top:100px;">
-                <div class="row">
-                    <div class="tim-title">
-                        <h1 class="text-center">
+        </div>
+        <div class="container tim-container" style="max-width:800px; padding-top:100px;">
+            <div class="row">
+                <div class="tim-title">
+                    <h1 class="text-center">
                 Saving<br>
-                <small class="subtitle">adsjkf;asdjkf;lasjd;lfksaj;ldfjkalsdjf;</small>
+                <small class="subtitle">การอดออมเงิน</small>
               </h1>
-                        <p>Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. </p>
-                    </div>
+                    <p><center>การอดออม เป็นการออมเงินไว้ใช้ในส่วนที่ฉุกเฉิน หรือเกิดความจำเป็นที่จะต้องใช้เงินอย่างจริงจัง ซึ่งจากการออมเงินไว้ จะสามารถทำให้เรามีเงินใช้
+                      ในตอนที่เราขัดสนได้ ซึ่งตัวอย่างของการออมเงินได้แก่ การออมเงิน การซื้อพันธบัตร ฝากธนาคาร เป็นต้น ซึ่งควรจะเแบ่งส่วนของเงินไว้ใช้ 1 ส่วน จากทั้งหมด 4 ส่วน<center></p>
                 </div>
             </div>
-            <div class="container tim-container" style="max-width:800px; padding-top:100px;">
-                <div class="row">
-                    <div class="tim-title">
-                        <h1 class="text-center">
+        </div>
+        <div class="container tim-container" style="max-width:800px; padding-top:100px;">
+            <div class="row">
+                <div class="tim-title">
+                    <h1 class="text-center">
                 Entertainment<br>
-                <small class="subtitle">adsjkf;asdjkf;lasjd;lfksaj;ldfjkalsdjf;</small>
+                <small class="subtitle">การใช้เงินเพื่อความบันเทิง</small>
               </h1>
-                        <p>Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. </p>
-                    </div>
+                    <p>การใช้เงินเพื่อความบันเทิง เอาไว้หาความสุขให้แก่ชีวิตของตัวเอง ถ้าเราเอาแต่เก็ยเงินออมเงินเพียงอย่างเดียว เงินที่เราหามานั้นก็จะไม่ได้ตอบสนองความต้องการ
+                    ของเราได้ทั้งหมด เพราะชีวิตของเราควรจะมีความสุขในการใช้ชีวิต แต่ก็ไม่ควรหาความสุขมากเกินไป ตัวอย่างการใช้เงินสำหรับความบันเทิงได้แก่ การใช้เงินสำหรับดูหนัง ช็อปปิ้ง
+                    กินข้าวมื้ออาหารราคาแพง </p>
                 </div>
             </div>
         </div>
