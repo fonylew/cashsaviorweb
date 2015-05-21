@@ -21,6 +21,29 @@
 </head>
 
 <body>
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '445214508974444',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+        
+        function logout(){
+            FB.logout(function(response) {
+              window.location.replace('index.html')
+            });
+        }
+</script>
     <?php @mysql_connect( "localhost", "zp8461_user", "User1234") or die(mysql_error ()); @mysql_select_db( "zp8461_cashsavior") or die (mysql_error()); ?>
     <?php if( $_GET[ "id"] ){ $userid=$_GET[ 'id']; echo "ID: ". $userid; } if( $_GET[ "name"] ){ $name=$_GET[ 'name']; echo "Welcome ". $name; } ?>
     <?php $selres=mysql_query( "SELECT * FROM users WHERE uid = '$userid'"); $num_rows=mysql_num_rows($selres); $tablename="U" . $userid; 
@@ -39,11 +62,11 @@
                         <a class="navbar-brand" href="#">Cash Savior</a>
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
-                                <li><a href="#">Username</a>
+                                <li><a href="#"><?php echo $name ?></a>
                                 </li>
                                 <li class="divider"></li>
                                 <li>
-                                    <button href="#" class="btn btn-round btn-default">LogOut</button>
+                                    <button href="#" class="btn btn-round btn-default" onclick="logout()">LogOut</button>
                                 </li>
                             </ul>
                         </div>
