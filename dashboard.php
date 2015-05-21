@@ -21,6 +21,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -44,6 +45,8 @@
             });
         }
 </script>
+=======
+>>>>>>> c116a58a4ea75d06463748707abc80715593e907
     <?php @mysql_connect( "localhost", "zp8461_user", "User1234") or die(mysql_error ()); @mysql_select_db( "zp8461_cashsavior") or die (mysql_error()); ?>
     <?php if( $_GET[ "id"] ){ $userid=$_GET[ 'id']; echo "ID: ". $userid; } if( $_GET[ "name"] ){ $name=$_GET[ 'name']; echo "Welcome ". $name; } ?>
     <?php $selres=mysql_query( "SELECT * FROM users WHERE uid = '$userid'"); $num_rows=mysql_num_rows($selres); $tablename="U" . $userid; 
