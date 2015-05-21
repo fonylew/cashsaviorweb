@@ -23,23 +23,36 @@
 
 <body>
     <?php @mysql_connect( "localhost", "zp8461_user", "User1234") or die(mysql_error ()); @mysql_select_db( "zp8461_cashsavior") or die (mysql_error()); ?>
+    <?php
+    if( $_REQUEST["id"] )
+    {
+     $id = $_REQUEST['id'];
+    echo "Welcome ". $name;
+    }
+    ?>
+    <?php
+        
+        $selres = mysql_query("SELECT * FROM users WHERE uid = '$userid'");
+        $num_rows = mysql_num_rows($selres);
+        $tablename = "U" . $userid;
+        if($num_rows != 0) {
+            //have user already
+            $sql_create_tb = mysql_query("CREATE TABLE IF NOT EXISTS $tablename(typeid INT NOT NULL, subid INT NOT NULL, amount INT NOT NULL, date DATE NOT NULL, note VARCHAR(70) NOT NULL)");
+        }
+        else {
+            //new user
+            $sql_add = mysql_query("INSERT INTO users VALUES('$userid')");
+            $sql_create_tb = mysql_query("CREATE TABLE $tablename(typeid INT NOT NULL, subid INT NOT NULL, amount INT NOT NULL, date DATE NOT NULL, note VARCHAR(70) NOT NULL)");
+        }
+    
+    ?>
     <div class="main">
         <div class="container-fluid">
             <div class="row" id="navbar">
                 <div class="col col-xs-12">
                     <nav class="navbar navbar-ct-blue navbar-fixed-top">
-                        <a class="navbar-brand" href="#">Brand</a>
+                        <a class="navbar-brand" href="#">Cash Savior</a>
                         <div class="collapse navbar-collapse">
-                            <ul class="nav navbar-nav">
-                                <li><a href="#">test1</a>
-                                </li>
-                                <li><a href="#">test2</a>
-                                </li>
-                                <li><a href="#">test3</a>
-                                </li>
-                                <li><a href="#">test4</a>
-                                </li>
-                            </ul>
                             <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
                                 <li><a href="#">Username</a>
                                 </li>
@@ -57,15 +70,9 @@
                                         top:0; bottom:0; left:0;
                                         width:15%;
                                         background-color: #80DEEA;
-    background-color: rgba(128, 222, 234, 0.98); padding-top: 69px;">
+    background-color: rgba(128, 222, 234, 0.98); padding-top: 70px;">
                 <ul class="nav navbar-stacked">
-                    <li><a href="#">test1</a>
-                    </li>
-                    <li><a href="#">test2</a>
-                    </li>
-                    <li><a href="#">test3</a>
-                    </li>
-                    <li><a href="#">test4</a>
+                    <li><a href="http://outcube.me/cashsavior/adding.php">test1</a>
                     </li>
                 </ul>
             </div>
@@ -107,8 +114,7 @@
 
                                         <!-- edit money bar-->
                                         <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
-                                            <div id="editbutton">
-                                                <button href="#" class="btn btn-round btn-default">Edit</button>
+                                                <a href="http://outcube.me/cashsavior/adding.php" class="btn btn-round btn-default">Add your payment!</a>
                                             </div>
 
                                         </ul>
@@ -116,15 +122,15 @@
                                     </div>
                                 </nav>
                             </div>
-                            <div class="col col-md-4">
-                                <div class="container">
+                            <div class="col col-lg-4">
+                                
 
                                     <div class="row">
                                         <canvas id="entCanvas" class="canvases" width="250" height="250"></canvas>
                                     </div>
                                      <h4>Entertainment</h4>
                                
-                                    <pre class="prettyprint prettyprinted" style="width: 25%;">
+                                    <pre class="prettyprint prettyprinted" style="min-width:250px; min-height: 200px; padding:5%;">
                                   
                               <?php    
                               $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
@@ -136,19 +142,20 @@
 
                               ") or die("Invalid query: "  .mysql_error());
                               while($data=mysql_fetch_array($query)) {
-                              echo "<br>";
-                              echo $data[0]." ";
-                              echo $data[1]." baht ";
-                              echo $data[2]." ";
-                              
-                              echo "<br>";
+                                  echo "<br>";
+                                  echo $data[0]." ";
+                                  echo $data[1]." baht ";
+                                  echo $data[2]." ";
+                                  
+                                  echo "<br>";
                               }
                               ?>
 
                             <?php
+                                    echo "<br>";
                                      $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid = 1")or die("Invalid query: "  .mysql_error());
                                      $data=mysql_fetch_array($query);
-                                    echo "Total payment entertainment :". $data[0] ." baht";
+                                    echo "Total payment entertainment :". $data[0] ." baht<br>";
                             ?>
                             
                                     </pre>
@@ -158,16 +165,16 @@
                                     </div>
 
 
-                                </div>
+                                
                             </div>
-                            <div class="col col-md-4">
-                                <div class="container">
+                            <div class="col col-lg-4">
+                                
                                     <div class="row">
                                         <canvas id="savCanvas" class="canvases" width="250" height="250"></canvas>
 
                                     </div>
                                     <h4>Saving</h4>
-                                    <pre class="prettyprint prettyprinted" style="width: 25%;">
+                                    <pre class="prettyprint prettyprinted" style="min-width:250px; min-height: 200px; padding:5%;">
                                     <?php    
                                       $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
                                       FROM u111111
@@ -187,9 +194,10 @@
                                       }
                                       ?>
                                     <?php
+                                    echo "<br>";
                                      $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid = 2")or die("Invalid query: "  .mysql_error());
                                      $data=mysql_fetch_array($query);
-                                    echo "Total payment saving :". $data[0] ." baht";
+                                    echo "Total payment saving :". $data[0] ." baht<br>";
                                      ?>
 
                                         
@@ -197,17 +205,17 @@
                                     <!-- infosaving-->
                                     <div id="saving">
                         
-                                </div>
+                                
                             </div>
                         </div>
-                            <div class="col col-md-4">
-                                <div class="container">
+                            <div class="col col-lg-4">
+                                
                                     <div class="row">
                                         <canvas id="invCanvas" class="canvases" width="250" height="250"></canvas>
 
                                     </div>
                                     <h4>Investment</h4>
-                                    <pre class="prettyprint prettyprinted" style="width: 25%;">
+                                    <pre class="prettyprint prettyprinted" style="min-width:250px; min-height: 200px; padding:5%;">
                                      <?php    
                                           $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
                                           FROM u111111
@@ -227,9 +235,10 @@
                                           }
                                           ?>
                                           <?php
+                                          echo "<br>";
                                             $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid = 3")or die("Invalid query: "  .mysql_error());
                                             $data=mysql_fetch_array($query);
-                                            echo "Total payment investment :". $data[0]." baht";
+                                            echo "Total payment investment :". $data[0]." baht<br>";
                                           ?>
                                     </pre>
                                     <!-- infoinvest-->
@@ -242,7 +251,7 @@
 
 
 
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -270,11 +279,19 @@
         $invper = $inv / ( $maxfill*2 ) *100;
     ?>
 
-    <div class="footer2">
+    <div class="footer2" style="margin-top: 20px;
+    background-color: #00BCD4;
+    background-color: rgba(0, 188, 212, 0.98);
+    background-attachment: fixed;
+    position: relative;">
         <div class="overlayer">
             <div class="container">
                 <div class="row">
-                    <div class="credits">
+                    <div class="credits" style="border-top: 1px solid #BBBBBB;
+    margin-top: 85px;
+    padding: 20px 0 15px;
+    text-align: center;
+    color: #EEE;">
                         Outcube.me
                     </div>
                 </div>
@@ -369,11 +386,7 @@
 <script src="assets/js/gsdk-radio.js"></script>
 <script src="assets/js/gsdk-bootstrapswitch.js"></script>
 <script src="assets/js/get-shit-done.js"></script>
-<script>
-    $(function () {
-        $("#editbutton").load("edit.php");
-    });
-</script>
+
 <script>
     $(function () {
         $("#saving").load("infosaving.php");

@@ -7,6 +7,8 @@
     <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/get-shit-done.css" rel="stylesheet" />  
     <link href="assets/css/demo.css" rel="stylesheet" /> 
+    
+    <link href="bootstrap3/css/custom.css" rel="stylesheet" />
 
 
 
@@ -36,10 +38,10 @@
 <a class="infosav_open btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;" href="#infosav">See more</a>
 
 <!-- infosav -->
-<div id="infosav" class="well" style="max-width:44em;">
+<div id="infosav" class="well" style="min-width:44em; padding: 2% 2%; padding-top: 0%;">
 
     <center>
-    <h4>saving example</h4>
+    <h4 style="width: relative; background-color:#4DD0E1; border-radius: 5px; padding: 5%;">saving example</h4>
     <br>
     <?php    
         $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
@@ -58,7 +60,7 @@
                               }
     ?>
     <br>
-    <button onclick="myFunction()" class="infosav_close btn btn-default">Done !!</button>
+    <button onclick="myFunction()" class="infosav_close btn btn-round btn-success btn-lg">Done !!</button>
     </center>
 </div>
 
