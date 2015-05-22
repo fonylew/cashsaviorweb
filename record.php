@@ -33,6 +33,7 @@
     echo $type;
     echo " already add!! ";
     echo $date;
+    echo $a2;
     
     $target = "?id=" . $userid . "&name=" . $name;
     header('refresh: 2; url=dashboard.php'.$target);
@@ -44,7 +45,7 @@
     ?>
     
     <?php
-        $result = mysql_query("INSERT INTO $tablename VALUES('$typeid','$subid','$cost','$date','$note')");
+        $result = mysql_query("INSERT INTO $tablename VALUES('$typeid','$subid','$a2','$date','$note');");
 
     
     ?>
