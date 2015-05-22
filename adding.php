@@ -73,6 +73,8 @@
     ?>
     <?php
     // Set session variables
+    $userid = $_SESSION["userid"];
+    $name = $_SESSION["name"];
     $tablename = $_SESSION["tableid"];
     ?>
     <form action="record.php" method="post" >

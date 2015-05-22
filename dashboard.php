@@ -21,6 +21,7 @@
 </head>
 
 <body>
+
     <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -42,10 +43,7 @@
               window.location.replace('index.html')
         }
 </script>
-     <?php
-  // Start the session
-    session_start();
-    ?>
+
     <?php @mysql_connect( "localhost", "zp8461_user", "User1234") or die(mysql_error ()); @mysql_select_db( "zp8461_cashsavior") or die (mysql_error()); ?>
     <?php if( $_GET[ "id"] ){ $userid=$_GET[ 'id']; echo "ID: ". $userid; } if( $_GET[ "name"] ){ $name=$_GET[ 'name']; echo "Welcome ". $name; } ?>
     <?php $selres=mysql_query( "SELECT * FROM users WHERE uid = '$userid'"); $num_rows=mysql_num_rows($selres); $tablename="U" . $userid; 
@@ -56,10 +54,17 @@
     //new user 
     $sql_add=mysql_query( "INSERT INTO users VALUES('$userid')"); $sql_create_tb=mysql_query( "CREATE TABLE $tablename(typeid INT NOT NULL, subid INT NOT NULL, amount INT NOT NULL, date DATE NOT NULL, note VARCHAR(70) NOT NULL)"); }
     ?>
+       <?php
+  // Start the session
+    session_start();
+    ?>
     <?php
-    // Set session variables
+    // Set session variable
+    $_SESSION["userid"] = $userid;
+    $_SESSION["name"] = $name;
    $_SESSION["tableid"] = $tablename;
     ?>
+
     <div class="main">
         <div class="container-fluid">
             <div class="row" id="navbar">
@@ -103,7 +108,7 @@
                                         <ul class="nav navbar-nav">
                                             <li>
                                                 <a href="#">
-                                                    <?php echo "use all (include fixcost)". $sumuse . " /"; echo "fixcost ". $sumfix . " /"; echo "salary". $salary ; echo "maxfill". ($maxfill *4); ?>
+                                                    <?php echo $userid." "."use all (include fixcost)". $sumuse . " /"; echo "fixcost ". $sumfix . " /"; echo "salary". $salary ; echo "maxfill". ($maxfill *4); ?>
                                                 </a>
                                             </li>
                                         </ul>

@@ -30,12 +30,14 @@
 
 </head>
 <body>
-           <?php
+    <?php
   // Start the session
     session_start();
     ?>
     <?php
     // Set session variables
+    $userid = $_SESSION["userid"];
+    $name = $_SESSION["name"];
    $tablename = $_SESSION["tableid"];
     ?>
     <?php

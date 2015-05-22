@@ -10,6 +10,8 @@
     ?>
     <?php
     // Set session variables
+    $userid = $_SESSION["userid"];
+    $name = $_SESSION["name"];
    $tablename = $_SESSION["tableid"];
     ?>
  <?php 
@@ -22,12 +24,12 @@
     $type = $temp[0];
     $subid = $temp[1];
 
-    if($type =="Entertainment") $typeid = 1;
+    if($type =="Entertainment") $typeid = 1;    
     if($type =="Saving") $typeid = 2;
     if($type =="Investment") $typeid = 3;
     if($type =="Fixed Cost") $typeid = 4;
     if($type =="Income") $typeid = 5;
-
+    echo $tablename;
     echo $type;
     echo " already add!! ";
     echo $date;
