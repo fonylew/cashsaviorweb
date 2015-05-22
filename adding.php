@@ -73,7 +73,7 @@
     ?>
     <?php
     // Set session variables
-   $_SESSION["tableid"] = $tablename;
+    $tablename = $_SESSION["tableid"];
     ?>
     <form action="record.php" method="post" >
         <div class="container" id="box">

@@ -10,7 +10,7 @@
     ?>
     <?php
     // Set session variables
-   $_SESSION["tableid"] = $tablename;
+   $tablename = $_SESSION["tableid"];
     ?>
  <?php 
     

@@ -36,7 +36,7 @@
     ?>
     <?php
     // Set session variables
-   $_SESSION["tableid"] = $tablename;
+   $tablename = $_SESSION["tableid"];
     ?>
     <?php
         @mysql_connect("localhost","zp8461_user","User1234") or die(mysql_error ());
