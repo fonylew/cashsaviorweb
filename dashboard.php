@@ -39,9 +39,7 @@
         }(document, 'script', 'facebook-jssdk'));
         
         function logout(){
-            FB.logout(function(response) {
               window.location.replace('index.html')
-            });
         }
 </script>
     <?php @mysql_connect( "localhost", "zp8461_user", "User1234") or die(mysql_error ()); @mysql_select_db( "zp8461_cashsavior") or die (mysql_error()); ?>
@@ -66,7 +64,7 @@
                                 </li>
                                 <li class="divider"></li>
                                 <li>
-                                    <button href="#" class="btn btn-round btn-default" onclick="FB.logout()">Log Out</button>
+                                    <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true" scope="public_profile,email" onlogin="logout();" style="margin-top: 20px; margin-right: 5px;"></div>
                                 </li>
                             </ul>
                         </div>
@@ -85,9 +83,9 @@
                 </ul>
             </div>
             <div class="row" id="leftnav">
-                <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid = 1 OR typeid =2 OR typeid =3 OR typeid = 4 ")or die( "Invalid query: ".mysql_error()); $data5=mysql_fetch_array($query); $sumuse=$data5[0]; ?>
-                <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid =4 ")or die( "Invalid query: " .mysql_error()); $data6=mysql_fetch_array($query); $sumfix=$data6[0]; ?>
-                <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid =5")or die( "Invalid query: " .mysql_error()); $data7=mysql_fetch_array($query); $salary=$data7[0]; $maxfill=( $salary - $sumfix)/4; ?>
+                <?php $query=mysql_query( "SELECT sum(amount) FROM $tablename WHERE typeid = 1 OR typeid =2 OR typeid =3 OR typeid = 4 ")or die( "Invalid query: ".mysql_error()); $data5=mysql_fetch_array($query); $sumuse=$data5[0]; ?>
+                <?php $query=mysql_query( "SELECT sum(amount) FROM $tablename WHERE typeid =4 ")or die( "Invalid query: " .mysql_error()); $data6=mysql_fetch_array($query); $sumfix=$data6[0]; ?>
+                <?php $query=mysql_query( "SELECT sum(amount) FROM $tablename WHERE typeid =5")or die( "Invalid query: " .mysql_error()); $data7=mysql_fetch_array($query); $salary=$data7[0]; $maxfill=( $salary - $sumfix)/4; ?>
                 <div class="col col-lg-10 col-lg-offset-2 col-md-9 col-md-offset-3 col-sm-9 col-sm-offset-3 col-xs-9 col-xs-offset-3">
                     <div class="container-fluid" style="padding-top:100px; padding-right:20px; left:200;">
                         <div class="row centered-form center-block">
@@ -123,12 +121,12 @@
                             <pre class="prettyprint prettyprinted" style="min-width:250px; min-height: 200px; padding:5%;">
                                   
                               <?php    
-                              $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
-                              FROM u111111
-                              JOIN type ON u111111.typeid = type.typeid
-                              AND u111111.subid = type.subid
-                              WHERE u111111.typeid =1
-                              ORDER BY u111111.date DESC LIMIT 2
+                              $query = mysql_query("SELECT type.typename, $tablename.amount, $tablename.date
+                              FROM $tablename
+                              JOIN type ON $tablename.typeid = type.typeid
+                              AND $tablename.subid = type.subid
+                              WHERE $tablename.typeid =1
+                              ORDER BY $tablename.date DESC LIMIT 2
 
                               ") or die("Invalid query: "  .mysql_error());
                               while($data=mysql_fetch_array($query)) {
@@ -143,7 +141,7 @@
 
                             <?php
                                     echo "<br>";
-                                     $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid = 1")or die("Invalid query: "  .mysql_error());
+                                     $query =mysql_query("SELECT sum(amount) FROM $tablename WHERE typeid = 1")or die("Invalid query: "  .mysql_error());
                                      $data=mysql_fetch_array($query);
                                     echo "Total payment entertainment :". $data[0] ." baht<br>";
                             ?>
@@ -166,12 +164,12 @@
                             <h4>Saving</h4>
                             <pre class="prettyprint prettyprinted" style="min-width:250px; min-height: 200px; padding:5%;">
                                     <?php    
-                                      $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
-                                      FROM u111111
-                                      JOIN type ON u111111.typeid = type.typeid
-                                      AND u111111.subid = type.subid
-                                      WHERE u111111.typeid =2
-                                      ORDER BY u111111.date DESC LIMIT 2
+                                      $query = mysql_query("SELECT type.typename, $tablename.amount, $tablename.date
+                                      FROM $tablename
+                                      JOIN type ON $tablename.typeid = type.typeid
+                                      AND $tablename.subid = type.subid
+                                      WHERE $tablename.typeid =2
+                                      ORDER BY $tablename.date DESC LIMIT 2
 
                                       ") or die("Invalid query: "  .mysql_error());
                                       while($data=mysql_fetch_array($query)) {
@@ -185,7 +183,7 @@
                                       ?>
                                     <?php
                                     echo "<br>";
-                                     $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid = 2")or die("Invalid query: "  .mysql_error());
+                                     $query =mysql_query("SELECT sum(amount) FROM $tablename WHERE typeid = 2")or die("Invalid query: "  .mysql_error());
                                      $data=mysql_fetch_array($query);
                                     echo "Total payment saving :". $data[0] ." baht<br>";
                                      ?>
@@ -207,12 +205,12 @@
                             <h4>Investment</h4>
                             <pre class="prettyprint prettyprinted" style="min-width:250px; min-height: 200px; padding:5%;">
                                      <?php    
-                                          $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
-                                          FROM u111111
-                                          JOIN type ON u111111.typeid = type.typeid
-                                          AND u111111.subid = type.subid
-                                          WHERE u111111.typeid =3
-                                          ORDER BY u111111.date DESC LIMIT 2
+                                          $query = mysql_query("SELECT type.typename, $tablename.amount, $tablename.date
+                                          FROM $tablename
+                                          JOIN type ON $tablename.typeid = type.typeid
+                                          AND $tablename.subid = type.subid
+                                          WHERE $tablename.typeid =3
+                                          ORDER BY $tablename.date DESC LIMIT 2
 
                                           ") or die("Invalid query: "  .mysql_error());
                                           while($data=mysql_fetch_array($query)) {
@@ -226,7 +224,7 @@
                                           ?>
                                           <?php
                                           echo "<br>";
-                                            $query =mysql_query("SELECT sum(amount) FROM u111111 WHERE typeid = 3")or die("Invalid query: "  .mysql_error());
+                                            $query =mysql_query("SELECT sum(amount) FROM $tablename WHERE typeid = 3")or die("Invalid query: "  .mysql_error());
                                             $data=mysql_fetch_array($query);
                                             echo "Total payment investment :". $data[0]." baht<br>";
                                           ?>
@@ -250,9 +248,9 @@
     </div>
     </div>
 
-    <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid = 1")or die( "Invalid query: ".mysql_error()); $data2=mysql_fetch_array($query); $ent=$data2[0]; $entper=$ent / $maxfill *100; ?>
-    <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid = 2")or die( "Invalid query: ".mysql_error()); $data3=mysql_fetch_array($query); $sav=$data3[0]; $savper=$sav / $maxfill *100; ?>
-    <?php $query=mysql_query( "SELECT sum(amount) FROM u111111 WHERE typeid = 3")or die( "Invalid query: ".mysql_error()); $data4=mysql_fetch_array($query); $inv=$data4[0]; $invper=$inv / ( $maxfill*2 ) *100; ?>
+    <?php $query=mysql_query( "SELECT sum(amount) FROM $tablename WHERE typeid = 1")or die( "Invalid query: ".mysql_error()); $data2=mysql_fetch_array($query); $ent=$data2[0]; $entper=$ent / $maxfill *100; ?>
+    <?php $query=mysql_query( "SELECT sum(amount) FROM $tablename WHERE typeid = 2")or die( "Invalid query: ".mysql_error()); $data3=mysql_fetch_array($query); $sav=$data3[0]; $savper=$sav / $maxfill *100; ?>
+    <?php $query=mysql_query( "SELECT sum(amount) FROM $tablename WHERE typeid = 3")or die( "Invalid query: ".mysql_error()); $data4=mysql_fetch_array($query); $inv=$data4[0]; $invper=$inv / ( $maxfill*2 ) *100; ?>
 
     <div class="footer2" style="margin-top: 20px;
     background-color: #00BCD4;
