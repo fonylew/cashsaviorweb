@@ -2,17 +2,54 @@
 <html>
 
 <head>
-    <title>LogIn-TestFill</title>
+    <meta http-equiv="content-type" content="text/html" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=no" name="viewport" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="css/favicon.ico" rel="icon" />
+    <link href="assets/css/get-shit-done.css" rel="stylesheet" />
+    <link href="css/apple-touch-icon.png" rel="apple-touch-icon" />
+    <script src="js/jquery-1.11.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <title>Cash Savior</title>
+    <meta charset="UTF-8">
+
     <style>
-        <!-- Can move it to some included CSS file --> #canvases {
-            display: block;
-            width: 80%;
-            padding: 50px 10%;
-            height: 800px;
+        @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 70%;
+            margin: auto;
+        }
+        .carousel .item {
+            width: 100%; /*slider width*/
+            max-height: 550px; /*slider height*/
+        }
+        .carousel .item img {
+            width: 100%; /*img width*/
+        }
+        #fleft {
+            float: left;
+            width: 26%;
+            height: 200px;
+            border: 3px solid black;
+            margin: 30px solid lightgrey;
+            padding: 30px;
+        }
+        
+        #fleft2 {
+            float: left;
+            width: 4%;
+            height: 200px;
+        }
+        
+        #fleft3 {
+            float: left;
+            width: 5%;
+            height: 200px;
         }
     </style>
-    <script src="js/jquery-1.11.2.js"></script>
-    <script src="https://raw.githubusercontent.com/mgalante/jquery.redirect/master/jquery.redirect.js"></script>
 </head>
 
 <body>
@@ -20,10 +57,6 @@
         function statusChangeCallback(response) {
             console.log('statusChangeCallback');
             console.log(response);
-            // The response object is returned with a status field that lets the
-            // app know the current login status of the person.
-            // Full docs on the response object can be found in the documentation
-            // for FB.getLoginStatus().
             if (response.status === 'connected') {
                 // Logged into your app and Facebook.
                 testAPI();
@@ -62,32 +95,16 @@
             FB.api('/me', function (response) {
                 console.log('Successful login for: ' + response.name);
                 document.getElementById('status').innerHTML =
-                    'Thanks for logging in, ' + response.name + '!';
+                    'Welcome, ' + response.name + '!';
 
                 var url = "dashboard.php?id=" + response.id + "&name=" + response.name;
                 window.location.replace(url);
             });
-            //            $.redirect("dashboard.php", {
-            //                id: response.id,
-            //                name: response.name
-            //            });
-
-            //                        var redirect = 'dashboard.php';
-            //                            $.redirectPost(redirect, {
-            //                                id: response.id,
-            //                                name: response.name
-            //                            });
-            //                            $.extend({
-            //                                redirectPost: function (location, args) {
-            //                                    var form = '';
-            //                                    $.each(args, function (key, value) {
-            //                                        form += '<input type="hidden" name="' + key + '" value="' + value + '">';
-            //                                    });
-            //                                    $('<form action="' + location + '" method="POST">' + form + '</form>').appendTo('body').submit();
-            //                                }
-            //                            });
-
         }
+        
+        $('.fb-login-button').onclick(function(){
+            checkLoginState();
+        });
     </script>
     <div id="fb-root"></div>
     <script>
@@ -101,93 +118,148 @@
         }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
+    <div class="row" id="navbar">
+        <div class="col col-xs-12">
+            <nav class="navbar navbar-ct-blue navbar-fixed-top" style="background-color: #00BCD4;
+                                                                background-color: rgba(0, 188, 212, 0.98);">
 
-    <div id="status">
-        <!-- FILL -->
-        <div>
-            <div style="display:none;">
-                <img id="entMask" src="img/mask_entertainment.png" width="250" height="250">
-                <img id="savMask" src="img/mask_saving.png" width="250" height="250">
-                <img id="invMask" src="img/mask_invest.png" width="250" height="250">
-            </div>
-            <canvas id="entCanvas" class="canvases" width="250" height="250"></canvas>
-            <canvas id="savCanvas" class="canvases" width="250" height="250"></canvas>
-            <canvas id="invCanvas" class="canvases" width="250" height="250"></canvas>
+                <a class="navbar-brand" href="#">Cash Savior</a>
+                <div class="collapse navbar-collapse">
+                    <div class="form-group">
+                        <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
+                            <li>
+                                <h1>FILL.HTML</h1>
+                            </li>
+                            <li>
+                                <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false" scope="public_profile,email" style="margin-top: 10px; margin-right: 10px;">Log In with Facebook</div>
+                                <!--fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                                </fb:login-button-->
+
+                                <div id="status"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
-        <script>
-            //percentage value from korn
-            var percent_ent = 130;
-            var percent_sav = -40;
-            var percent_inv = 90;
+    </div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
-            function fillent(percent) {
-                var ent = document.getElementById("entCanvas");
-                var ectx = ent.getContext("2d");
-                ectx.beginPath();
-                ectx.rect(0, 250 - (percent * 2.5), 250, 1000);
-                if (percent > 100) ectx.fillStyle = '#ff0000';
-                else ectx.fillStyle = '#00bcd4';
-                ectx.fill();
-                var emask = document.getElementById("entMask");
-                ectx.drawImage(emask, 0, 0);
-                return;
-            }
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="pic/car_inv.jpg" alt="Investment">
+                
+            </div>
 
-            function fillsav(percent) {
-                var sav = document.getElementById("savCanvas");
-                var sctx = sav.getContext("2d");
-                sctx.beginPath();
-                sctx.rect(0, 250 - (percent * 2.5), 250, 1000);
-                if (percent > 100) sctx.fillStyle = '#ff0000';
-                else sctx.fillStyle = '#00bcd4';
-                sctx.fill();
-                var smask = document.getElementById("savMask");
-                sctx.drawImage(smask, 0, 0);
-                return;
-            }
+            <div class="item">
+                <img src="pic/car_sav.jpg" alt="Saving">
+                
+            </div>
 
-            function fillinv(percent) {
-                var inv = document.getElementById("invCanvas");
-                var ictx = inv.getContext("2d");
-                ictx.beginPath();
-                ictx.rect(0, 250 - (percent * 2.5), 250, 1000);
-                if (percent > 100) ictx.fillStyle = '#ff0000';
-                else ictx.fillStyle = '#00bcd4';
-                ictx.fill();
-                var imask = document.getElementById("invMask");
-                ictx.drawImage(imask, 0, 0);
-                return;
-            }
-            window.onload = function () {
-                var ent = document.getElementById("entCanvas");
-                var ectx = ent.getContext("2d");
-                var sav = document.getElementById("savCanvas");
-                var sctx = sav.getContext("2d");
-                var inv = document.getElementById("invCanvas");
-                var ictx = inv.getContext("2d");
-                //-------- back -------------------
-                ectx.beginPath();
-                ectx.rect(0, 0, 250, 250);
-                ectx.fillStyle = '#dddddd';
-                ectx.fill();
+            <div class="item">
+                <img src="pic/car_ent.jpg" alt="Entertainment">
+                
+            </div>
+        </div>
 
-                sctx.beginPath();
-                sctx.rect(0, 0, 250, 250);
-                sctx.fillStyle = '#dddddd';
-                sctx.fill();
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div> 
+    <div class="main">
+        <div class="container tim-container" style="max-width:800px; padding-top:100px;">
+            <div class="row">
+                <div class="tim-title">
 
-                ictx.beginPath();
-                ictx.rect(0, 0, 250, 250);
-                ictx.fillStyle = '#dddddd';
-                ictx.fill();
-                //----------------------------------
-                fillent(percent_ent);
-                fillsav(percent_sav);
-                fillinv(percent_inv);
-            }
-        </script>
+                    <h1 class="text-center">
+
+                CashSavior
+                
+                <small class="subtitle"><center>แอปพลิเคชันบริหารจัดการเงินที่จะทำให้เงินของคุณ <br>ตั้งอยู่บนความสมดุล</center></small>
+              </h1>
+                    <p>
+                        <center>Cashsavior เป็นแอปพลิเคชั่นที่ได้นำหลักพุทธศาสนา "โภควิภาค" มาประยุกต์ใช้กับการบริหารจัดการเงิน
+                            <br> โดยหลักโภควิภาคนั้นเป็นหลักที่ยืดความสมดุล โดยแบ่งค่าใช้จ่ายที่นอกเหนือจากค่าใช้จ่ายที่จำเป็นในชีวิติประจำวัน หรือ fixcost แบ่งออกเป็น 4 ส่วน คือ เงินในส่วนอดออม 1 ส่วน เช่น การฝากธนาคาร การซื้อพันธบัตร ส่วนต่อมาคือ เงินใช้สำหรับหาความบันเทิง 1 ส่วน เช่น เที่ยวสวนสนุก ดูหนัง และส่วนที่เหลือคือ เงินที่ใช้สำหรับการลงทุนในอนาคตอีก 2 ส่วน เช่น การขยายกิจการ การอ่านหนังสือหาความรู้
+                        </center>
+                    </p>
+                    <center><a href="cash_savior.apk"><img src="pic/android-download.png" /></a></center>
+                </div>
+            </div>
+        </div>
+        <div class="container tim-container" style="max-width:800px; padding-top:100px;">
+            <div class="row">
+                <div class="tim-title">
+
+                    <h1 class="text-center">
+
+                Investment<br>
+                <small class="subtitle">การใช้เงินเพื่อลงทุนในอนาคต</small>
+              </h1>
+                    <p>
+                        <center>การใช้เงินเพื่อลงทุนในอนาคต มีความสำคัญถึง 2 ส่วนจาก 4 ส่วน เพราะเป็นการที่นำเงินที่เราได้มา ใช้สำหรับการหาเงินภายภาคหน้า ไว้เผื่อต่อยอดเงินในอนาคต ซึ่งการใช้เงินประเภทนี้จะได้แก่ การอ่านหนังสือเพื่อหาความรู้ต่อยอด การลงทุนธุรกิจต่างๆ การขยายกิจการ การเสริมทักษะในด้านต่างๆ เช่น การเรียนภาษาที่สาม เป็นต้น
+                        </center>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container tim-container" style="max-width:800px; padding-top:100px;">
+            <div class="row">
+                <div class="tim-title">
+                    <h1 class="text-center">
+                Saving<br>
+                <small class="subtitle">การอดออมเงิน</small>
+              </h1>
+                    <p>
+                        <center>การอดออม เป็นการออมเงินไว้ใช้ในส่วนที่ฉุกเฉิน หรือเกิดความจำเป็นที่จะต้องใช้เงินอย่างจริงจัง ซึ่งจากการออมเงินไว้ จะสามารถทำให้เรามีเงินใช้ ในตอนที่เราขัดสนได้ ซึ่งตัวอย่างของการออมเงินได้แก่ การออมเงิน การซื้อพันธบัตร ฝากธนาคาร เป็นต้น ซึ่งควรจะเแบ่งส่วนของเงินไว้ใช้ 1 ส่วน จากทั้งหมด 4 ส่วน
+                            <center>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container tim-container" style="max-width:800px; padding-top:100px;">
+            <div class="row">
+                <div class="tim-title">
+                    <h1 class="text-center">
+                Entertainment<br>
+                <small class="subtitle">การใช้เงินเพื่อความบันเทิง</small>
+              </h1>
+                    <p>การใช้เงินเพื่อความบันเทิง เอาไว้หาความสุขให้แก่ชีวิตของตัวเอง ถ้าเราเอาแต่เก็ยเงินออมเงินเพียงอย่างเดียว เงินที่เราหามานั้นก็จะไม่ได้ตอบสนองความต้องการ ของเราได้ทั้งหมด เพราะชีวิตของเราควรจะมีความสุขในการใช้ชีวิต แต่ก็ไม่ควรหาความสุขมากเกินไป ตัวอย่างการใช้เงินสำหรับความบันเทิงได้แก่ การใช้เงินสำหรับดูหนัง ช็อปปิ้ง กินข้าวมื้ออาหารราคาแพง </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer2" style="margin-top: 20px;
+    background-color: #00BCD4;
+    background-color: rgba(0, 188, 212, 0.98);
+    background-attachment: fixed;
+    position: relative; margin-top: 100px;">
+            <div class="overlayer">
+                <div class="container">
+                    <div class="row">
+                        <div class="credits" style="border-top: 1px solid #BBBBBB;
+    margin-top: 85px;
+    padding: 20px 0 15px;
+    text-align: center;
+    color: #EEE;">
+                            Outcube.me
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 </body>
 
 </html>
