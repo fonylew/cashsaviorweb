@@ -22,13 +22,20 @@
             width: 70%;
             margin: auto;
         }
+        
         .carousel .item {
-            width: 100%; /*slider width*/
-            max-height: 550px; /*slider height*/
+            width: 100%;
+            /*slider width*/
+            
+            max-height: 550px;
+            /*slider height*/
         }
+        
         .carousel .item img {
-            width: 100%; /*img width*/
+            width: 100%;
+            /*img width*/
         }
+        
         #fleft {
             float: left;
             width: 26%;
@@ -83,11 +90,9 @@
                 xfbml: true,
                 version: 'v2.3'
             });
-
             FB.getLoginStatus(function (response) {
                 statusChangeCallback(response);
             });
-
         };
 
         function testAPI() {
@@ -96,15 +101,31 @@
                 console.log('Successful login for: ' + response.name);
                 document.getElementById('status').innerHTML =
                     'Welcome, ' + response.name + '!';
-
-                var url = "dashboard.php?id=" + response.id + "&name=" + response.name;
-                window.location.replace(url);
             });
         }
-        
-        $('.fb-login-button').onclick(function(){
-            checkLoginState();
-        });
+
+        function fb_login() {
+            FB.login(function (response) {
+                if (response.authResponse) {
+                    console.log('Welcome!  Fetching your information.... ');
+                    FB.api('/me', function (response) {
+                        console.log('Good to see you, ' + response.name + '.');
+                        var url = "dashboard.php?id=" + response.id + "&name=" + response.name;
+                        window.location.replace(url);
+                    });
+                } else {
+                    console.log('User cancelled login or did not fully authorize.');
+                    alert("please log in to Facebook");
+                }
+            });
+        }
+
+        //        FB.Event.subscribe('auth.login', function (r) {
+        //                console.log(r.status);
+        //                if (r.status === 'connected') {
+        //                    testAPI();
+        //                }
+        //            });
     </script>
     <div id="fb-root"></div>
     <script>
@@ -131,7 +152,7 @@
                                 <h1>FILL.HTML</h1>
                             </li>
                             <li>
-                                <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false" scope="public_profile,email" style="margin-top: 10px; margin-right: 10px;">Log In with Facebook</div>
+                                <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false" scope="public_profile,email" style="margin-top: 10px; margin-right: 10px;" onclick="fb_login()">Log In with Facebook</div>
                                 <!--fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
                                 </fb:login-button-->
 
@@ -155,17 +176,17 @@
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 <img src="pic/car_inv.jpg" alt="Investment">
-                
+
             </div>
 
             <div class="item">
                 <img src="pic/car_sav.jpg" alt="Saving">
-                
+
             </div>
 
             <div class="item">
                 <img src="pic/car_ent.jpg" alt="Entertainment">
-                
+
             </div>
         </div>
 
@@ -178,7 +199,7 @@
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-    </div> 
+    </div>
     <div class="main">
         <div class="container tim-container" style="max-width:800px; padding-top:100px;">
             <div class="row">
@@ -195,7 +216,10 @@
                             <br> โดยหลักโภควิภาคนั้นเป็นหลักที่ยืดความสมดุล โดยแบ่งค่าใช้จ่ายที่นอกเหนือจากค่าใช้จ่ายที่จำเป็นในชีวิติประจำวัน หรือ fixcost แบ่งออกเป็น 4 ส่วน คือ เงินในส่วนอดออม 1 ส่วน เช่น การฝากธนาคาร การซื้อพันธบัตร ส่วนต่อมาคือ เงินใช้สำหรับหาความบันเทิง 1 ส่วน เช่น เที่ยวสวนสนุก ดูหนัง และส่วนที่เหลือคือ เงินที่ใช้สำหรับการลงทุนในอนาคตอีก 2 ส่วน เช่น การขยายกิจการ การอ่านหนังสือหาความรู้
                         </center>
                     </p>
-                    <center><a href="cash_savior.apk"><img src="pic/android-download.png" /></a></center>
+                    <center>
+                        <a href="cash_savior.apk"><img src="pic/android-download.png" />
+                        </a>
+                    </center>
                 </div>
             </div>
         </div>

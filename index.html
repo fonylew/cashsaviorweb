@@ -96,9 +96,22 @@
                 console.log('Successful login for: ' + response.name);
                 document.getElementById('status').innerHTML =
                     'Welcome, ' + response.name + '!';
-
-                var url = "dashboard.php?id=" + response.id + "&name=" + response.name;
-                window.location.replace(url);
+            });
+        }
+        
+        function fb_login() {
+            FB.login(function (response) {
+                if (response.authResponse) {
+                    console.log('Welcome!  Fetching your information.... ');
+                    FB.api('/me', function (response) {
+                        console.log('Good to see you, ' + response.name + '.');
+                        var url = "dashboard.php?id=" + response.id + "&name=" + response.name;
+                        window.location.replace(url);
+                    });
+                } else {
+                    console.log('User cancelled login or did not fully authorize.');
+                    alert("please log in to Facebook");
+                }
             });
         }
     </script>
