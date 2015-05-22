@@ -24,6 +24,7 @@
     echo " already add!! ";
     echo $date;
 
+    header('refresh: 2; url=dashboard.php')
     ?>
     <?php
     @mysql_connect("localhost","zp8461_user","User1234") or die(mysql_error ());
@@ -32,7 +33,7 @@
     ?>
     
     <?php
-        $result = mysql_query("INSERT INTO u111111 VALUES('$typeid','$subid','$cost','$date','$note')");
+        $result = mysql_query("INSERT INTO $tablename VALUES('$typeid','$subid','$cost','$date','$note')");
 
     
     ?>
