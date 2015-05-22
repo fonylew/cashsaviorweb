@@ -33,8 +33,9 @@
     echo $type;
     echo " already add!! ";
     echo $date;
-
-    header('refresh: 2; url=dashboard.php')
+    
+    $target = "?id=" . $userid . "&name=" . $name;
+    header('refresh: 2; url=dashboard.php'.$target);
     ?>
     <?php
     @mysql_connect("localhost","zp8461_user","User1234") or die(mysql_error ());

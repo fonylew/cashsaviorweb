@@ -60,8 +60,8 @@
     ?>
     <?php
     // Set session variable
-    $_SESSION["userid"] = $userid;
-    $_SESSION["name"] = $name;
+    $_SESSION["userid"] = $_GET['id'];
+    $_SESSION["name"] = $_GET['name'];
    $_SESSION["tableid"] = $tablename;
     ?>
 
