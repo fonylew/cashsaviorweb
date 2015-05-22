@@ -39,10 +39,8 @@
     }
     ?>
     <?php
-        <?php
-    @mysql_connect("localhost","zp8461_user","User1234") or die(mysql_error ());
-    @mysql_select_db("zp8461_cashsavior") or die (mysql_error());
-        ?>
+        @mysql_connect("localhost","zp8461_user","User1234") or die(mysql_error ());
+        @mysql_select_db("zp8461_cashsavior") or die (mysql_error());
     ?>
 <a class="infosav_open btn btn-round btn-info" style="margin-top: 10px; margin-bottom:20px;" href="#infosav">See more</a>
 

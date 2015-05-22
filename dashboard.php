@@ -80,7 +80,7 @@
                                         background-color: #80DEEA;
     background-color: rgba(128, 222, 234, 0.98); padding-top: 70px;">
                 <ul class="nav navbar-stacked">
-                    <li><a href="http://outcube.me/cashsavior/adding.php">test1</a>
+                    <li><a href="http://outcube.me/cashsavior/adding.php">Add Transaction</a>
                     </li>
                 </ul>
             </div>
