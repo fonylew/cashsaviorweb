@@ -67,6 +67,14 @@
             $('select[data-selectsplitter-selector]').selectsplitter();
         }
     </script>
+         <?php
+  // Start the session
+    session_start();
+    ?>
+    <?php
+    // Set session variables
+   $_SESSION["tableid"] = $tablename;
+    ?>
     <form action="record.php" method="post" >
         <div class="container" id="box">
             <div class="row">

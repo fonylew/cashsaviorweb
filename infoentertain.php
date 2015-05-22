@@ -32,6 +32,14 @@
     </style>
 </head>
 <body>
+             <?php
+  // Start the session
+    session_start();
+    ?>
+    <?php
+    // Set session variables
+   $_SESSION["tableid"] = $tablename;
+    ?>
     <?php
     @mysql_connect("localhost","zp8461_user","User1234") or die(mysql_error ());
     @mysql_select_db("zp8461_cashsavior") or die (mysql_error());
@@ -48,11 +56,11 @@
     <br>
     <style="font-size: 20px;">
     <?php    
-        $query = mysql_query("SELECT type.typename, u111111.amount, u111111.date
-                              FROM u111111
-                              JOIN type ON u111111.typeid = type.typeid
-                              AND u111111.subid = type.subid
-                              WHERE u111111.typeid =1
+        $query = mysql_query("SELECT type.typename, $tablename.amount, $tablename.date
+                              FROM $tablename
+                              JOIN type ON $tablename.typeid = type.typeid
+                              AND $tablename.subid = type.subid
+                              WHERE $tablename.typeid =1
                                 ") or die("Invalid query: "  .mysql_error());
         while($data=mysql_fetch_array($query)) {
                               echo "<br>";

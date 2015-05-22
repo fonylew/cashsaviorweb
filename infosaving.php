@@ -30,13 +30,13 @@
 
 </head>
 <body>
+         <?php
+  // Start the session
+    session_start();
+    ?>
     <?php
-    if( $_REQUEST["id"] )
-    {
-     $userid = $_REQUEST['id'];
-     $tablename="U" . $userid;
-    
-    }
+    // Set session variables
+   $_SESSION["tableid"] = $tablename;
     ?>
     <?php
         @mysql_connect("localhost","zp8461_user","User1234") or die(mysql_error ());

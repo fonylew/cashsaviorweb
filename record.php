@@ -4,6 +4,14 @@
 </head>
 <body>
 <form action='adding.php' method="post">
+    <?php
+  // Start the session
+    session_start();
+    ?>
+    <?php
+    // Set session variables
+   $_SESSION["tableid"] = $tablename;
+    ?>
  <?php 
     
     $a1 = $_POST["field"];
